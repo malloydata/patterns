@@ -1,0 +1,3 @@
+source: commits is table('duckdb:https://api.github.com/repos/malloydata/malloy-composer/releases/latest?foo.json') {
+  
+}
