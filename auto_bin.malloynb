@@ -22,7 +22,7 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "## Elevation within states."
+    "value": "## Elevation within states.\nNotice that all the binning is local to the individual states.  For example the bottom bin in Colorado starts at an elevation of 3000ish feet."
   },
   {
     "kind": 2,
