@@ -2,31 +2,37 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "# Automatically Binning Data\nBy computing min, max and bin size we can make histograms that automatically adapt to the data range.\n\nWe'd like to produce a histogram of elevation over all and within each state."
+    "value": "# Automatically Binning Data\nBy computing min, max and bin size we can make histograms that automatically adapt to the data range.\n\nWe'd like to produce a histogram of elevation over all and within each state.",
+    "metadata": {}
   },
   {
     "kind": 2,
     "language": "malloy",
-    "value": "source: airports is table('duckdb:data/airports.parquet') + {\n  measure: \n    airport_count is count()\n\n  query: by_elevation_bar_chart is {\n    nest: bins is {\n      aggregate: \n        min_val is min(elevation)\n        max_val is max(elevation)\n        bin_size is (max(elevation) - min(elevation))/20\n    }\n    nest: data is {\n      group_by: // bug, project produces an error.\n        elevation\n    }\n  }\n  -> {\n    group_by: elevation is floor((data.elevation - bins.min_val)/bins.bin_size)*bins.bin_size + bins.min_val\n    aggregate: airport_count is data.count()\n  }\n\n}"
+    "value": "source: airports is table('duckdb:data/airports.parquet') + {\n  measure: \n    airport_count is count()\n\n  query: by_elevation_bar_chart is {\n    nest: bins is {\n      aggregate: \n        min_val is min(elevation)\n        max_val is max(elevation)\n        bin_size is (max(elevation) - min(elevation))/20\n    }\n    nest: data is {\n      group_by: // bug, project produces an error.\n        elevation\n    }\n  }\n  -> {\n    group_by: elevation is floor((data.elevation - bins.min_val)/bins.bin_size)*bins.bin_size + bins.min_val\n    \n    aggregate: airport_count is data.count()\n  }\n\n}",
+    "metadata": {}
   },
   {
     "kind": 1,
     "language": "markdown",
-    "value": "## Over all elevation distribution"
+    "value": "## Over all elevation distribution",
+    "metadata": {}
   },
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query: airports -> by_elevation_bar_chart\n\n// --! style bar_chart"
+    "value": "query: airports -> by_elevation_bar_chart\n\n// --! style bar_chart",
+    "metadata": {}
   },
   {
     "kind": 1,
     "language": "markdown",
-    "value": "## Elevation within states.\nNotice that all the binning is local to the individual states.  For example the bottom bin in Colorado starts at an elevation of 3000ish feet."
+    "value": "## Elevation within states.\nNotice that all the binning is local to the individual states.  For example the bottom bin in Colorado starts at an elevation of 3000ish feet.",
+    "metadata": {}
   },
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query: airports -> {\n  group_by: state\n  aggregate: airport_count\n  nest: by_elevation_bar_chart\n}"
+    "value": "query: airports -> {\n  group_by: state\n  aggregate: airport_count\n  nest: by_elevation_bar_chart\n}",
+    "metadata": {}
   }
 ]
