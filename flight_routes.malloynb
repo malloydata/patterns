@@ -20,7 +20,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query: flights -> {\n  top: 10\n  group_by: dest.code, dest.full_name\n  aggregate: flight_count\n  nest: by_carrier_bar_chart is {\n    group_by: carriers.nickname\n    aggregate: flight_count\n  }\n  nest: by_carrier_by_month_line_chart is {\n    group_by: flight_month is dep_time.month\n    aggregate: flight_count\n    group_by: carriers.nickname\n  }\n  nest: by_carrier_origin is {\n    group_by: carriers.nickname\n    aggregate: \n      flight_count\n      percent_of_flights is flight_count/all(flight_count) * 100\n      avg_distance is distance.avg()\n    nest: routes_segment_map\n    nest: origin_percentage_list_detail is {\n      group_by: orig.city\n      aggregate: percent_of_flights\n    }\n  }\n}\n// --! style dashboard",
+    "value": "query: flights -> {\n  top: 10\n  group_by: dest.code, dest.full_name\n  aggregate: flight_count\n  nest: by_carrier_bar_chart is {\n    group_by: carriers.nickname\n    aggregate: flight_count\n  }\n  nest: by_carrier_by_month_line_chart is {\n    group_by: flight_month is dep_time.month\n    aggregate: flight_count\n    group_by: carriers.nickname\n  }\n  nest: by_carrier_origin is {\n    group_by: carriers.nickname\n    aggregate: \n      flight_count\n      percent_of_flights\n      avg_distance is distance.avg()\n    nest: routes_segment_map\n    nest: origin_percentage_list_detail is {\n      group_by: orig.city\n      aggregate: percent_of_flights\n    }\n  }\n}\n// --! style dashboard",
     "metadata": {}
   },
   {
