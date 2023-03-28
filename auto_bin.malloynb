@@ -8,7 +8,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "source: airports is table('duckdb:data/airports.parquet') + {\n  measure: \n    airport_count is count()\n  query: by_elevation is {\n    aggregate:bin_size is (max(elevation) - min(elevation))/30\n    nest: data is {\n      group_by: elevation\n      aggregate: row_count is count()\n    }\n  }\n  -> {\n    group_by: elevation is floor(data.elevation/bin_size)*bin_size + bin_size/2\n    aggregate: airport_count is data.row_count.sum()\n    order_by: elevation\n  }\n}",
+    "value": "source: airports is table('duckdb:data/airports.parquet') + {\n  measure: \n    airport_count is count()\n  query: by_elevation is {\n    aggregate: bin_size is (max(elevation) - min(elevation))/30\n    nest: data is {\n      group_by: elevation\n      aggregate: row_count is count()\n    }\n  }\n  -> {\n    group_by: elevation is floor(data.elevation/bin_size)*bin_size + bin_size/2\n    aggregate: airport_count is data.row_count.sum()\n    order_by: elevation\n  }\n}",
     "metadata": {}
   },
   {
