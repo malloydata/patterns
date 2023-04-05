@@ -8,7 +8,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "source: commits is \n  table('duckdb:https://api.github.com/repos/malloydata/malloy/commits?per_page=100&foo.json') \n  {\n  measure: \n    commit_count is count()\n}",
+    "value": "source: commits is \n  table('duckdb:https://api.github.com/repos/duckdb/duckdb/commits?per_page=100&foo.json') \n  {\n  measure: \n    commit_count is count()\n}",
     "metadata": {}
   },
   {
