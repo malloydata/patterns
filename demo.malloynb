@@ -1,0 +1,8 @@
+[
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "source: carriers is table('duckdb:data/carriers.parquet') \nsource: airports is table('duckdb:data/airports.parquet')\nsource: flights is table('duckdb:data/flights.parquet')",
+    "metadata": {}
+  }
+]
