@@ -1,10 +1,14 @@
+source: airports is table('duckdb:data/airports.parquet')
+
+source: carriers is table('duckdb:data/carriers.parquet')
+
 source: flights is table('duckdb:data/flights.parquet') {
   measure: 
     flight_count is count()
     percent_of_flights is flight_count/all(flight_count) * 100
 
-  join_one: orig is table('duckdb:data/airports.parquet') on origin=orig.code
-  join_one: dest is table('duckdb:data/airports.parquet') on destination=dest.code
+  join_one: orig is airports on origin=orig.code
+  join_one: dest is airports on destination=dest.code
   join_one: carriers is table('duckdb:data/carriers.parquet') on carrier=carriers.code
 
   query: routes_segment_map is {
