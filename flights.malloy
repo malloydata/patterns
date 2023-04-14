@@ -1,0 +1,44 @@
+source: flights is table('duckdb:data/flights.parquet') {
+  measure: 
+    flight_count is count()
+    percent_of_flights is flight_count/all(flight_count) * 100
+
+  join_one: orig is table('duckdb:data/airports.parquet') on origin=orig.code
+  join_one: dest is table('duckdb:data/airports.parquet') on destination=dest.code
+  join_one: carriers is table('duckdb:data/carriers.parquet') on carrier=carriers.code
+
+  query: routes_segment_map is {
+    group_by:
+      orig.latitude
+      orig.longitude
+      latitude2 is dest.latitude
+      longitude2 is dest.longitude
+  }
+}
+
+query: flights_dashboard is flights -> {
+  top: 10
+  group_by: dest.code, dest.full_name
+  aggregate: flight_count
+  nest: by_carrier_bar_chart is {
+    group_by: carriers.nickname
+    aggregate: flight_count
+  }
+  nest: by_carrier_by_month_line_chart is {
+    group_by: flight_month is dep_time.month
+    aggregate: flight_count
+    group_by: carriers.nickname
+  }
+  nest: by_carrier_origin is {
+    group_by: carriers.nickname
+    aggregate: 
+      flight_count
+      percent_of_flights
+      avg_distance is distance.avg()
+    nest: routes_segment_map
+    nest: origin_percentage_list_detail is {
+      group_by: orig.city
+      aggregate: percent_of_flights
+    }
+  }
+}

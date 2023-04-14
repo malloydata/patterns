@@ -10,11 +10,5 @@
     "language": "malloy",
     "value": "query: flights -> {\n    group_by:\n        dest.code\n        dest.full_name\n    \n    aggregate: flight_count\n    nest: flights_by_carrier_bar_chart is flights_by_carrier\n\n    nest: flights_by_carrier_month_line_chart is {\n        group_by: flight_month is dep_time.month\n        aggregate: flight_count\n        group_by: carriers.nickname\n    }\n    top: 10\n}\n// --! style dashboard",
     "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "",
-    "metadata": {}
   }
 ]
