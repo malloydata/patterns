@@ -1,0 +1,20 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Deduping rows in a table using a SQL block",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "sql: flights_deduped is {\n  connection: \"duckdb\"\n  select: \"\"\"\n    SELECT * from 'data/flights.parquet'\n    qualify ROW_NUMBER() over (partition by dep_time, origin, destination, flight_num)\n  \"\"\"\n}\n\nsource: flights is from_sql(flights_deduped)",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "query: flights -> {aggregate: flight_count is count()}",
+    "metadata": {}
+  }
+]
