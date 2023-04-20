@@ -2,13 +2,13 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "# Deduping rows in a table using a SQL block",
+    "value": "# Deduping rows in a table using a SQL block\n\nPartition by the things that make the row unique.  Grab the first one.",
     "metadata": {}
   },
   {
     "kind": 2,
     "language": "malloy",
-    "value": "sql: flights_deduped is {\n  connection: \"duckdb\"\n  select: \"\"\"\n    SELECT * from 'data/flights.parquet'\n    qualify ROW_NUMBER() over (partition by dep_time, origin, destination, flight_num)\n  \"\"\"\n}\n\nsource: flights is from_sql(flights_deduped)",
+    "value": "sql: flights_deduped is {\n  connection: \"duckdb\"\n  select: \"\"\"\n    SELECT * from 'data/flights.parquet'\n    qualify ROW_NUMBER() over (partition by dep_time, origin, destination, flight_num) = 1\n  \"\"\"\n}\n\nsource: flights is from_sql(flights_deduped)",
     "metadata": {}
   },
   {
