@@ -1,0 +1,62 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Source vs Query\n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "source: flights is table('duckdb:data/flights.parquet') {\n  join_one: dest is table('duckdb:data/airports.parquet') on destination=dest.code\n\n  measure: flight_count is count()\n\n  query: flights_by_destination is {\n    group_by: dest.full_name\n    aggregate: flight_count\n    limit: 10\n  }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "In the simplest case of a query, a query comes from a source:",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "-- Standard query, from Source:\nquery: flights -> flights_by_destination",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "In pipelined queries, a query stage can come from another query stage.",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "-- Standard query, from Source with added pipeline stage\nquery: flights -> flights_by_destination -> { aggregate: avg_cnt is avg(flight_count) }",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "In the above query, it looks like we have a query coming from another query.\n\n- `query: flights` is the source\n- `-> flights_by_destination` is a query from a source\n- `-> { aggregate: avg_cnt is avg(flight_count) }` is a query from a query",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "-- Define a named query:\nquery: q_flights_by_dest is flights -> flights_by_destination\n\n-- Side note: the codelens action will run this query\n-- but the Notebook \"run\" button will not. Notebook bug?",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "I think most people expect the following to work:\n\n`query: q_flights_by_dest -> { aggregate: avg_cnt is avg(flight_count) }`\n\nBecause `q_flights_by_dest` is defined as `flights -> flights_by_destination`, and they are expecting an algebraic substitution of `q_flights_by_dest` into the above expression, which would turn it into:\n\n`query: flights -> flights_by_destination -> { aggregate: avg_cnt is avg(flight_count) }`\n\n... but this doesn't work:\n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "-- This doesn't compile:\n-- query: q_flights_by_dest -> { aggregate: avg_cnt is avg(flight_count) }\n\n-- Instead need to do:\nquery: -> q_flights_by_dest -> { aggregate: avg_cnt is avg(flight_count) }",
+    "metadata": {}
+  }
+]
