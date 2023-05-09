@@ -50,13 +50,25 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "## Weights can be any measure\nSuppose we are looking at the Aircraft Models table and we'd like to produce an index.  \n",
+    "value": "## Weights can be any measure\nSuppose we are looking at the Aircraft Models table and we'd like to produce an index.  In our world, big planes so we are going to weight the values for bigger planes higher.  The query name `search_index` is special.  Composer looks for a query named `search_index` to use to suggest search terms.\n",
     "metadata": {}
   },
   {
     "kind": 2,
     "language": "malloy",
-    "value": "source: models is table('duckdb:data/aircraft_models.parquet') + {\n  measure: total_seats is seats.sum()\n}\nquery:  models -> {\n  index: * by total_seats\n} -> {\n  project: *\n  order_by: weight desc\n}",
+    "value": "source: aircraft_models is table('duckdb:data/aircraft_models.parquet') + {\n  measure: total_seats is seats.sum()\n\n  query: search_index is {\n    index: * by total_seats\n  } -> {\n    project: *\n    order_by: weight desc\n  }\n\n}\nquery:  aircraft_models -> search_index ",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Index the entire graph\nIndexing can work across an entire network of joins.  In this case we are going to join flights and airports and carriers.  To speed things up we are going to only sample 5000 rows.",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "source: flights is table('duckdb:data/flights.parquet') {\n  join_one: carriers is table('duckdb:data/carriers.parquet') on carrier = carriers.code\n  join_one: dest is table('duckdb:data/airports.parquet') on destination = dest.code\n  join_one: orig is table('duckdb:data/airports.parquet') on origin = orig.code\n\n  query: search_index is {\n    index: *, dest.*, orig.* carriers.*\n    sample: 5000\n  }\n}\n\n// use the search index to look up values for 'SAN'\nquery: flights-> search_index -> {\n  where: fieldValue ~ r'SAN'\n  project: *\n  order_by: weight desc\n}\n",
     "metadata": {}
   }
 ]
