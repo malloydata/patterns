@@ -46,5 +46,17 @@
     "language": "malloy",
     "value": "query:  table('duckdb:data/airports.parquet') -> {\n  index: *\n} -> {\n  group_by: fieldName\n  nest: values is {\n    group_by: fieldValue, weight\n    order_by: weight desc\n    limit: 10\n  }\n  order_by: fieldName\n}",
     "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Weights can be any measure\nSuppose we are looking at the Aircraft Models table and we'd like to produce an index.  \n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "source: models is table('duckdb:data/aircraft_models.parquet') + {\n  measure: total_seats is seats.sum()\n}\nquery:  models -> {\n  index: * by total_seats\n} -> {\n  project: *\n  order_by: weight desc\n}",
+    "metadata": {}
   }
 ]
