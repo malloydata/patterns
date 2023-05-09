@@ -1,7 +1,9 @@
-# Patterns
-Malloy Design Patterns
+# Malloy Design Patterns
 
-To run these examples, press `.` from Github and make sure you load the Malloy Extension when prompted.
+To run these examples
+* Log into Github
+* press `.`  (the period key) to run vscode
+* Install the Malloy Extension when prompted (or manually)
 
 ## Sessionization
 Take list of individual flights and map/reduce into individual aircraft sessions per day.  Display their routes for each day on a map.  Classic Map/Reduce.
