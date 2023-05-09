@@ -1,0 +1,14 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Malloy Indexes\nMalloy has a special query operator that builds dimensional search indexes for sources.  Search indexes are generally used by Malloy Composer (Malloy's BI interface), but can also be used for other things.\n\nWhen filtering data, you might know a term, but not necessarily which column in the one of the join data contains it.  Indexing the data on field names and high cardinality fields let's you qucikly find the term and the associated value.\n\nThough I haven't played with it.  Indexing could be used by LLMs to find the interesting column/term mapping in the data set.\n\n## Simple Example\nWe're going to take the airports table and index it.",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "source: a is table('duckdb:data/airports.parquet') {\n  query: my_index is {\n    index: *\n  }\n}\n\nquery:  a -> my_index",
+    "metadata": {}
+  }
+]
