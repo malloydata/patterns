@@ -27,3 +27,8 @@ Sometime data comes in with duplicates.  We can base a query on a SQL Query to r
 Using DuckDB wwe can query from Web API endpoints.  This example pulls from the github and runs some transformation queries against the results
 
 [HTTP API Queries](api_json.malloynb)
+
+## Indexing the entire graph (for search)
+Malloy has a special 'index' operator that produces a result that contains all the low cardinality values in a graph weighed by whatever measure you like.  The index can be built by reading the whole graph or sampling a subset of records.  The index is useful in suggesting filters and for basic understanding of a data set.
+
+[Malloy Indexes](index.malloynb)
