@@ -58,5 +58,11 @@
     "language": "malloy",
     "value": "-- This doesn't compile:\n-- query: q_flights_by_dest -> { aggregate: avg_cnt is avg(flight_count) }\n\n-- Instead need to do:\nquery: -> q_flights_by_dest -> { aggregate: avg_cnt is avg(flight_count) }",
     "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "",
+    "metadata": {}
   }
 ]
