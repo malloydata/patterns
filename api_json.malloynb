@@ -2,7 +2,7 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "# Calling Web APIs and Translating the Results\n\nWith DuckDB, we can call web APIs that return JSON.  Malloy can transform this JSON and even join it with other data.",
+    "value": "# Calling Web APIs and Translating the Results\n\nWith DuckDB, we can call web APIs that return JSON.  Malloy can transform this JSON and even join it with other data. (Broken on the web version, run locally).",
     "metadata": {}
   },
   {

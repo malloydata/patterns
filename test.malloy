@@ -1,22 +1,3 @@
 source: airport is table('duckdb:data/airports.parquet') + {
-  measure:
-    airport_count is count()
-    avg_elevation is elevation.avg()
-    percent_of_all is airport_count/all(airport_count)*100
 
-  query: by_state is {
-    group_by: state
-    aggregate: 
-      airport_count
-      avg_elevation
-      percent_of_all
-    nest: by_county is {
-      group_by: county
-      aggregate: 
-        airport_count
-        avg_elevation
-        percent_of_all
-      limit: 5
-    }
-  }
 }
