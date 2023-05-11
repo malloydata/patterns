@@ -1,0 +1,11 @@
+--! connection: duckdb
+--! import: "test.malloy"
+
+COPY (
+%{
+  airports -> {
+    group_by: state
+    aggregate: flight_count is count()
+  }
+}%
+) TO 'test.csv' (HEADER) 

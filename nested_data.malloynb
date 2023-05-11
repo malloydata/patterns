@@ -1,0 +1,38 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Working with Nested Data\nData often comes in a nested data structure.  BigQuery and DuckDB natively support reading tables with nested data\nand unnesting this data.\n\nMalloy makes working with nested pretty trivial.  In Malloy a nested array or struct is treated as a built \nin `join_many`.  You can simply use dot pathing to reach the data.\n\nIn this dataset, `hits`, `pageviews`, `product` and more are all repeated structures.  Aggregate calculation are \ncreated by adding the full path to the number value and adding the appropriate aggregate function.  In Malloy, this is\ncalled *aggregate locality*.  Malloy guarenteed proper calculation regardless of join pattern.",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "source:ga_sessions is table('duckdb:data/ga_sample.parquet'){\n  measure:\n    user_count is count(distinct fullVisitorId)\n    session_count is count()\n    total_visits is totals.visits.sum()\n    total_hits is totals.hits.sum()\n    total_page_views is totals.pageviews.sum()\n    t2 is totals.pageviews.sum()\n    total_productRevenue is hits.product.productRevenue.sum()\n    hits_count is hits.count()\n    sold_count is hits.count() { where: hits.product.productQuantity > 0 }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": " query: ga_sessions -> {\n    where: trafficSource.source != '(direct)'\n    group_by: trafficSource.source\n    aggregate: \n      hits_count\n      total_visits\n      session_count\n      user_count\n    limit: 10\n  }",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "  query: ga_sessions -> {\n    group_by: device.browser\n    aggregate: \n      user_count\n      total_visits\n      total_hits\n      total_page_views\n      sold_count\n  }",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Nested Data can also be from JSON\nDuckdb natively reads JSON and JSON often contains nested element.  \ncan easily transform on JSON structure into another.\n\nStarting with this *[example json file](data/commits.json)*, we can write a query \nto transform it.",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "query: table('duckdb:data/commits.json') -> {\n  group_by: author.login\n  aggregate: commit_count is count()\n  nest: by_commit is {\n    group_by: \n      commit.committer.`date`\n      commit.message\n      html_url\n  }\n}",
+    "metadata": {}
+  }
+]

@@ -1,0 +1,2412 @@
+[
+  {
+    "sha": "02fa1ac7f816d6e0e72522d4bc6f8b71681d0226",
+    "node_id": "C_kwDOF5ZoRtoAKDAyZmExYWM3ZjgxNmQ2ZTBlNzI1MjJkNGJjNmY4YjcxNjgxZDAyMjY",
+    "commit": {
+      "author": {
+        "name": "Chandan Bhagwat",
+        "email": "srs.chandan@gmail.com",
+        "date": "2023-05-09T22:19:41Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2023-05-09T22:19:41Z"
+      },
+      "message": "Fix  - no model was present error. (#1101)\n\n* fix parent.\r\n\r\n* fix lint",
+      "tree": {
+        "sha": "5d1f738aa1af1a2ce030d18b2cb1b94f3ad96c24",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/5d1f738aa1af1a2ce030d18b2cb1b94f3ad96c24"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/02fa1ac7f816d6e0e72522d4bc6f8b71681d0226",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJkWsb9CRBK7hj4Ov3rIwAAhtEIAJ9StDUReqmmQcSVfBo9glBb\nwzDKhO5vZf1kkPekes3o40arWEkk9D1ozIH8EAtATvP9oLwsTKuue+Mnba22oOR2\n5pzS19AWslFgWrA23bvIYsikjd/9ZT9whkJ+RgCkN2jCiC5Uv03N1yW0a+kbaZnK\ncE4TiEXfTdAs00taPaCdXgz6/8JjcmBM7OBX2uCHlUmg/h8oVALPq7Dsh3vX9INr\n98LAt9r564e9zUucRJ0ZRU9AXnLPWt+SrNm056EQIq9ISwjB7/MUDIryuFPdomxE\nxEqu38td+5/IngIDHL+OS4ipheKwvVf9bdBx+oBtc5EyG0WsfQP5SDjlNW20urQ=\n=KhrN\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 5d1f738aa1af1a2ce030d18b2cb1b94f3ad96c24\nparent a9ae799cf6bda8ec8657d37b61ea0f17a478879b\nauthor Chandan Bhagwat <srs.chandan@gmail.com> 1683670781 -0700\ncommitter GitHub <noreply@github.com> 1683670781 -0700\n\nFix  - no model was present error. (#1101)\n\n* fix parent.\r\n\r\n* fix lint"
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/02fa1ac7f816d6e0e72522d4bc6f8b71681d0226",
+    "html_url": "https://github.com/malloydata/malloy/commit/02fa1ac7f816d6e0e72522d4bc6f8b71681d0226",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/02fa1ac7f816d6e0e72522d4bc6f8b71681d0226/comments",
+    "author": {
+      "login": "srschandan",
+      "id": 10955828,
+      "node_id": "MDQ6VXNlcjEwOTU1ODI4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10955828?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/srschandan",
+      "html_url": "https://github.com/srschandan",
+      "followers_url": "https://api.github.com/users/srschandan/followers",
+      "following_url": "https://api.github.com/users/srschandan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/srschandan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/srschandan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/srschandan/subscriptions",
+      "organizations_url": "https://api.github.com/users/srschandan/orgs",
+      "repos_url": "https://api.github.com/users/srschandan/repos",
+      "events_url": "https://api.github.com/users/srschandan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/srschandan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "a9ae799cf6bda8ec8657d37b61ea0f17a478879b",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/a9ae799cf6bda8ec8657d37b61ea0f17a478879b",
+        "html_url": "https://github.com/malloydata/malloy/commit/a9ae799cf6bda8ec8657d37b61ea0f17a478879b"
+      }
+    ]
+  },
+  {
+    "sha": "a9ae799cf6bda8ec8657d37b61ea0f17a478879b",
+    "node_id": "C_kwDOF5ZoRtoAKGE5YWU3OTljZjZiZGE4ZWM4NjU3ZDM3YjYxZWEwZjE3YTQ3ODg3OWI",
+    "commit": {
+      "author": {
+        "name": "Malloy CI Bot",
+        "email": "malloy-ci-bot@google.com",
+        "date": "2023-05-08T15:41:47Z"
+      },
+      "committer": {
+        "name": "Malloy CI Bot",
+        "email": "malloy-ci-bot@google.com",
+        "date": "2023-05-08T15:41:47Z"
+      },
+      "message": "Version 0.0.33-dev",
+      "tree": {
+        "sha": "b8b9c1364e24350cb8249ec1dfb8eab0edcc8705",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/b8b9c1364e24350cb8249ec1dfb8eab0edcc8705"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/a9ae799cf6bda8ec8657d37b61ea0f17a478879b",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/a9ae799cf6bda8ec8657d37b61ea0f17a478879b",
+    "html_url": "https://github.com/malloydata/malloy/commit/a9ae799cf6bda8ec8657d37b61ea0f17a478879b",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/a9ae799cf6bda8ec8657d37b61ea0f17a478879b/comments",
+    "author": {
+      "login": "malloydataci",
+      "id": 119628741,
+      "node_id": "U_kgDOByFjxQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/119628741?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/malloydataci",
+      "html_url": "https://github.com/malloydataci",
+      "followers_url": "https://api.github.com/users/malloydataci/followers",
+      "following_url": "https://api.github.com/users/malloydataci/following{/other_user}",
+      "gists_url": "https://api.github.com/users/malloydataci/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/malloydataci/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/malloydataci/subscriptions",
+      "organizations_url": "https://api.github.com/users/malloydataci/orgs",
+      "repos_url": "https://api.github.com/users/malloydataci/repos",
+      "events_url": "https://api.github.com/users/malloydataci/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/malloydataci/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "malloydataci",
+      "id": 119628741,
+      "node_id": "U_kgDOByFjxQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/119628741?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/malloydataci",
+      "html_url": "https://github.com/malloydataci",
+      "followers_url": "https://api.github.com/users/malloydataci/followers",
+      "following_url": "https://api.github.com/users/malloydataci/following{/other_user}",
+      "gists_url": "https://api.github.com/users/malloydataci/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/malloydataci/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/malloydataci/subscriptions",
+      "organizations_url": "https://api.github.com/users/malloydataci/orgs",
+      "repos_url": "https://api.github.com/users/malloydataci/repos",
+      "events_url": "https://api.github.com/users/malloydataci/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/malloydataci/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "b9e26bd109f0a5b308e554afc93155d46b8544ba",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/b9e26bd109f0a5b308e554afc93155d46b8544ba",
+        "html_url": "https://github.com/malloydata/malloy/commit/b9e26bd109f0a5b308e554afc93155d46b8544ba"
+      }
+    ]
+  },
+  {
+    "sha": "b9e26bd109f0a5b308e554afc93155d46b8544ba",
+    "node_id": "C_kwDOF5ZoRtoAKGI5ZTI2YmQxMDlmMGE1YjMwOGU1NTRhZmM5MzE1NWQ0NmI4NTQ0YmE",
+    "commit": {
+      "author": {
+        "name": "Ben Porterfield",
+        "email": "bporterfield@users.noreply.github.com",
+        "date": "2023-05-06T22:34:10Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2023-05-06T22:34:10Z"
+      },
+      "message": "Merge pull request #1097 from carinakoo8/big-query-credentials\n\nPass projectId and credentials body to BQ auth",
+      "tree": {
+        "sha": "ac1eb325c51968c82f4ef6ee91eadac3acece80e",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/ac1eb325c51968c82f4ef6ee91eadac3acece80e"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/b9e26bd109f0a5b308e554afc93155d46b8544ba",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJkVtXiCRBK7hj4Ov3rIwAADD0IABrBLG8OPCYxvRsu8Bj+0NMW\nhfAiYwqMgDSfvPU3UpF0lcrsETdKI7NXf3wJ2ixww9J1//VXCoMHz4VuB41bsyE4\nl2xU/dxgnWWz4hQFq+y/Dc9V3EerEN+t0MR+UudH4pjBDHAbsB35VSXcHSWrbkI8\nxYOqNVr4BNmGQWOc2od/niDsFfdZcCQ5KSCogszEDsBEKg3eSVL2Pkg9qC+XJU9J\nf8mU+j3CoQyeYL8u3I45oH7jO1zkKlD5EphYSL1Al2K22/6Sdmzh9Et7VPTFf59p\nGXnmJIrAUWZ9noGtMHkTOJulspZkch+ud92ehfqXaAZ7CqVPxoXe2Typ1ABYF30=\n=C9Bb\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree ac1eb325c51968c82f4ef6ee91eadac3acece80e\nparent e793f7372e38f03f60cc924d930a20d40435b513\nparent df12242753eac9cd7f106991159f0724fd90925b\nauthor Ben Porterfield <bporterfield@users.noreply.github.com> 1683412450 -0700\ncommitter GitHub <noreply@github.com> 1683412450 -0700\n\nMerge pull request #1097 from carinakoo8/big-query-credentials\n\nPass projectId and credentials body to BQ auth"
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/b9e26bd109f0a5b308e554afc93155d46b8544ba",
+    "html_url": "https://github.com/malloydata/malloy/commit/b9e26bd109f0a5b308e554afc93155d46b8544ba",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/b9e26bd109f0a5b308e554afc93155d46b8544ba/comments",
+    "author": {
+      "login": "bporterfield",
+      "id": 108260,
+      "node_id": "MDQ6VXNlcjEwODI2MA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/108260?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bporterfield",
+      "html_url": "https://github.com/bporterfield",
+      "followers_url": "https://api.github.com/users/bporterfield/followers",
+      "following_url": "https://api.github.com/users/bporterfield/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bporterfield/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bporterfield/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bporterfield/subscriptions",
+      "organizations_url": "https://api.github.com/users/bporterfield/orgs",
+      "repos_url": "https://api.github.com/users/bporterfield/repos",
+      "events_url": "https://api.github.com/users/bporterfield/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bporterfield/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e793f7372e38f03f60cc924d930a20d40435b513",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/e793f7372e38f03f60cc924d930a20d40435b513",
+        "html_url": "https://github.com/malloydata/malloy/commit/e793f7372e38f03f60cc924d930a20d40435b513"
+      },
+      {
+        "sha": "df12242753eac9cd7f106991159f0724fd90925b",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/df12242753eac9cd7f106991159f0724fd90925b",
+        "html_url": "https://github.com/malloydata/malloy/commit/df12242753eac9cd7f106991159f0724fd90925b"
+      }
+    ]
+  },
+  {
+    "sha": "e793f7372e38f03f60cc924d930a20d40435b513",
+    "node_id": "C_kwDOF5ZoRtoAKGU3OTNmNzM3MmUzOGYwM2Y2MGNjOTI0ZDkzMGEyMGQ0MDQzNWI1MTM",
+    "commit": {
+      "author": {
+        "name": "lloyd tabb",
+        "email": "ltabb@google.com",
+        "date": "2023-05-06T19:15:29Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2023-05-06T19:15:29Z"
+      },
+      "message": "Merge pull request #1098 from malloydata/ltabb/join_filter_exp\n\njoin dependancy problem fixes #1092",
+      "tree": {
+        "sha": "f9c1c4057aea774a1b99d9de3f99f6f9d2159e6a",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/f9c1c4057aea774a1b99d9de3f99f6f9d2159e6a"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/e793f7372e38f03f60cc924d930a20d40435b513",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJkVqdRCRBK7hj4Ov3rIwAAz5sIACxH6kzqWuBWpnjt0hcBWUo8\ny85v1Y5srrni/TUbSM1z9uKpwjHwBP+zGyiOAeE/TZoO7pcOooPsA8MpkZMnImNM\nQLj06hXUDR3qucqpGoBMwHvCkzgzpq1o2i9Tk7F68PM1JLG64Gp4zzYjofPtKWlx\nBNqul+EAqrEJARZ9FwVBsw0JdpzAYMIaiQHu5KHKDpylIbFS+doIkwoQJ4NP75Fr\nLCKJlW7Qw5Zhb51N37B/3/TsvgNeuoV91uQJo8+DUDYk8UUQguUfxTZ8/f1UAF8z\nZ84QvXTrmS0jnfi0J7pWQ5v1EYhbGVucF1cydYya/9BYoF4dwpNbiFrvTCbN1GE=\n=IYjx\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree f9c1c4057aea774a1b99d9de3f99f6f9d2159e6a\nparent 0f89d04d30c6dde02bfcd772fd64082c7453027e\nparent 1c09acc7a9ba9ad840d3b80621e95ced10816934\nauthor lloyd tabb <ltabb@google.com> 1683400529 -0500\ncommitter GitHub <noreply@github.com> 1683400529 -0500\n\nMerge pull request #1098 from malloydata/ltabb/join_filter_exp\n\njoin dependancy problem fixes #1092"
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/e793f7372e38f03f60cc924d930a20d40435b513",
+    "html_url": "https://github.com/malloydata/malloy/commit/e793f7372e38f03f60cc924d930a20d40435b513",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/e793f7372e38f03f60cc924d930a20d40435b513/comments",
+    "author": {
+      "login": "lloydtabb",
+      "id": 1093458,
+      "node_id": "MDQ6VXNlcjEwOTM0NTg=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1093458?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lloydtabb",
+      "html_url": "https://github.com/lloydtabb",
+      "followers_url": "https://api.github.com/users/lloydtabb/followers",
+      "following_url": "https://api.github.com/users/lloydtabb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lloydtabb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lloydtabb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lloydtabb/subscriptions",
+      "organizations_url": "https://api.github.com/users/lloydtabb/orgs",
+      "repos_url": "https://api.github.com/users/lloydtabb/repos",
+      "events_url": "https://api.github.com/users/lloydtabb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lloydtabb/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "0f89d04d30c6dde02bfcd772fd64082c7453027e",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/0f89d04d30c6dde02bfcd772fd64082c7453027e",
+        "html_url": "https://github.com/malloydata/malloy/commit/0f89d04d30c6dde02bfcd772fd64082c7453027e"
+      },
+      {
+        "sha": "1c09acc7a9ba9ad840d3b80621e95ced10816934",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/1c09acc7a9ba9ad840d3b80621e95ced10816934",
+        "html_url": "https://github.com/malloydata/malloy/commit/1c09acc7a9ba9ad840d3b80621e95ced10816934"
+      }
+    ]
+  },
+  {
+    "sha": "1c09acc7a9ba9ad840d3b80621e95ced10816934",
+    "node_id": "C_kwDOF5ZoRtoAKDFjMDlhY2M3YTliYTlhZDg0MGQzYjgwNjIxZTk1Y2VkMTA4MTY5MzQ",
+    "commit": {
+      "author": {
+        "name": "lloyd tabb",
+        "email": "ltabb@google.com",
+        "date": "2023-05-06T18:52:39Z"
+      },
+      "committer": {
+        "name": "lloyd tabb",
+        "email": "ltabb@google.com",
+        "date": "2023-05-06T18:52:39Z"
+      },
+      "message": "join dependancy problem fixes #1092",
+      "tree": {
+        "sha": "f9c1c4057aea774a1b99d9de3f99f6f9d2159e6a",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/f9c1c4057aea774a1b99d9de3f99f6f9d2159e6a"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/1c09acc7a9ba9ad840d3b80621e95ced10816934",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/1c09acc7a9ba9ad840d3b80621e95ced10816934",
+    "html_url": "https://github.com/malloydata/malloy/commit/1c09acc7a9ba9ad840d3b80621e95ced10816934",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/1c09acc7a9ba9ad840d3b80621e95ced10816934/comments",
+    "author": {
+      "login": "lloydtabb",
+      "id": 1093458,
+      "node_id": "MDQ6VXNlcjEwOTM0NTg=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1093458?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lloydtabb",
+      "html_url": "https://github.com/lloydtabb",
+      "followers_url": "https://api.github.com/users/lloydtabb/followers",
+      "following_url": "https://api.github.com/users/lloydtabb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lloydtabb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lloydtabb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lloydtabb/subscriptions",
+      "organizations_url": "https://api.github.com/users/lloydtabb/orgs",
+      "repos_url": "https://api.github.com/users/lloydtabb/repos",
+      "events_url": "https://api.github.com/users/lloydtabb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lloydtabb/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "lloydtabb",
+      "id": 1093458,
+      "node_id": "MDQ6VXNlcjEwOTM0NTg=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1093458?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lloydtabb",
+      "html_url": "https://github.com/lloydtabb",
+      "followers_url": "https://api.github.com/users/lloydtabb/followers",
+      "following_url": "https://api.github.com/users/lloydtabb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lloydtabb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lloydtabb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lloydtabb/subscriptions",
+      "organizations_url": "https://api.github.com/users/lloydtabb/orgs",
+      "repos_url": "https://api.github.com/users/lloydtabb/repos",
+      "events_url": "https://api.github.com/users/lloydtabb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lloydtabb/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "0f89d04d30c6dde02bfcd772fd64082c7453027e",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/0f89d04d30c6dde02bfcd772fd64082c7453027e",
+        "html_url": "https://github.com/malloydata/malloy/commit/0f89d04d30c6dde02bfcd772fd64082c7453027e"
+      }
+    ]
+  },
+  {
+    "sha": "0f89d04d30c6dde02bfcd772fd64082c7453027e",
+    "node_id": "C_kwDOF5ZoRtoAKDBmODlkMDRkMzBjNmRkZTAyYmZjZDc3MmZkNjQwODJjNzQ1MzAyN2U",
+    "commit": {
+      "author": {
+        "name": "lloyd tabb",
+        "email": "ltabb@google.com",
+        "date": "2023-05-06T17:16:29Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2023-05-06T17:16:29Z"
+      },
+      "message": "Merge pull request #968 from malloydata/ltabb/duckdb-lateral-joins\n\nLateral Joins for duckdb.",
+      "tree": {
+        "sha": "c6a9f4b80bf16736431e68fd5d0fbd2b64b4a099",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/c6a9f4b80bf16736431e68fd5d0fbd2b64b4a099"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/0f89d04d30c6dde02bfcd772fd64082c7453027e",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJkVottCRBK7hj4Ov3rIwAAl+0IAHa1Dyb+szYu4oKYUqoMBPMe\nkfdHUHqlK39FB7+mGJTr4pGs93Dp/FBwm5Y1FP+NXw3mipGkZAUED/SoYzK8TNSc\nVQTUqjKGSfEEdvqdpHWT53wZRpD6DGSwYIzBMNw/uZ+4kM428hNKLNrlJx6ENl7v\nRrwJbGMrh72+cBhwhdGxRZah6k+72tzSk7dcwEYje/IgaU1vruWWaLaHmfgN9FJj\ny/5Apcq9H6t/ySLVjYRPs/rBrUYzIzOQLhLpF8fEWJnY//6ncAZ6CUhPCzHWGvOK\nnnhp/jqH/76GZt7KE22Be5ZqnJrAOGAcB3HiX3SLlarlm7Nm6fChYlnq97ABsoI=\n=Do6p\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree c6a9f4b80bf16736431e68fd5d0fbd2b64b4a099\nparent 4721a132a4f0bea7a6b2d1557398dfb8b4cd4c5f\nparent abf85999188fa1df1f17437df4c76ff865401886\nauthor lloyd tabb <ltabb@google.com> 1683393389 -0500\ncommitter GitHub <noreply@github.com> 1683393389 -0500\n\nMerge pull request #968 from malloydata/ltabb/duckdb-lateral-joins\n\nLateral Joins for duckdb."
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/0f89d04d30c6dde02bfcd772fd64082c7453027e",
+    "html_url": "https://github.com/malloydata/malloy/commit/0f89d04d30c6dde02bfcd772fd64082c7453027e",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/0f89d04d30c6dde02bfcd772fd64082c7453027e/comments",
+    "author": {
+      "login": "lloydtabb",
+      "id": 1093458,
+      "node_id": "MDQ6VXNlcjEwOTM0NTg=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1093458?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lloydtabb",
+      "html_url": "https://github.com/lloydtabb",
+      "followers_url": "https://api.github.com/users/lloydtabb/followers",
+      "following_url": "https://api.github.com/users/lloydtabb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lloydtabb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lloydtabb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lloydtabb/subscriptions",
+      "organizations_url": "https://api.github.com/users/lloydtabb/orgs",
+      "repos_url": "https://api.github.com/users/lloydtabb/repos",
+      "events_url": "https://api.github.com/users/lloydtabb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lloydtabb/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "4721a132a4f0bea7a6b2d1557398dfb8b4cd4c5f",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/4721a132a4f0bea7a6b2d1557398dfb8b4cd4c5f",
+        "html_url": "https://github.com/malloydata/malloy/commit/4721a132a4f0bea7a6b2d1557398dfb8b4cd4c5f"
+      },
+      {
+        "sha": "abf85999188fa1df1f17437df4c76ff865401886",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/abf85999188fa1df1f17437df4c76ff865401886",
+        "html_url": "https://github.com/malloydata/malloy/commit/abf85999188fa1df1f17437df4c76ff865401886"
+      }
+    ]
+  },
+  {
+    "sha": "abf85999188fa1df1f17437df4c76ff865401886",
+    "node_id": "C_kwDOF5ZoRtoAKGFiZjg1OTk5MTg4ZmExZGYxZjE3NDM3ZGY0Yzc2ZmY4NjU0MDE4ODY",
+    "commit": {
+      "author": {
+        "name": "lloyd tabb",
+        "email": "ltabb@google.com",
+        "date": "2023-05-06T16:55:58Z"
+      },
+      "committer": {
+        "name": "lloyd tabb",
+        "email": "ltabb@google.com",
+        "date": "2023-05-06T16:55:58Z"
+      },
+      "message": "prettier errors.",
+      "tree": {
+        "sha": "c6a9f4b80bf16736431e68fd5d0fbd2b64b4a099",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/c6a9f4b80bf16736431e68fd5d0fbd2b64b4a099"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/abf85999188fa1df1f17437df4c76ff865401886",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/abf85999188fa1df1f17437df4c76ff865401886",
+    "html_url": "https://github.com/malloydata/malloy/commit/abf85999188fa1df1f17437df4c76ff865401886",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/abf85999188fa1df1f17437df4c76ff865401886/comments",
+    "author": {
+      "login": "lloydtabb",
+      "id": 1093458,
+      "node_id": "MDQ6VXNlcjEwOTM0NTg=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1093458?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lloydtabb",
+      "html_url": "https://github.com/lloydtabb",
+      "followers_url": "https://api.github.com/users/lloydtabb/followers",
+      "following_url": "https://api.github.com/users/lloydtabb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lloydtabb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lloydtabb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lloydtabb/subscriptions",
+      "organizations_url": "https://api.github.com/users/lloydtabb/orgs",
+      "repos_url": "https://api.github.com/users/lloydtabb/repos",
+      "events_url": "https://api.github.com/users/lloydtabb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lloydtabb/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "lloydtabb",
+      "id": 1093458,
+      "node_id": "MDQ6VXNlcjEwOTM0NTg=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1093458?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lloydtabb",
+      "html_url": "https://github.com/lloydtabb",
+      "followers_url": "https://api.github.com/users/lloydtabb/followers",
+      "following_url": "https://api.github.com/users/lloydtabb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lloydtabb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lloydtabb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lloydtabb/subscriptions",
+      "organizations_url": "https://api.github.com/users/lloydtabb/orgs",
+      "repos_url": "https://api.github.com/users/lloydtabb/repos",
+      "events_url": "https://api.github.com/users/lloydtabb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lloydtabb/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "6eaeec6efb63c2556c776b4b09aeccbe9864ae43",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/6eaeec6efb63c2556c776b4b09aeccbe9864ae43",
+        "html_url": "https://github.com/malloydata/malloy/commit/6eaeec6efb63c2556c776b4b09aeccbe9864ae43"
+      }
+    ]
+  },
+  {
+    "sha": "6eaeec6efb63c2556c776b4b09aeccbe9864ae43",
+    "node_id": "C_kwDOF5ZoRtoAKDZlYWVlYzZlZmI2M2MyNTU2Yzc3NmI0YjA5YWVjY2JlOTg2NGFlNDM",
+    "commit": {
+      "author": {
+        "name": "lloyd tabb",
+        "email": "ltabb@google.com",
+        "date": "2023-05-06T16:42:04Z"
+      },
+      "committer": {
+        "name": "lloyd tabb",
+        "email": "ltabb@google.com",
+        "date": "2023-05-06T16:42:04Z"
+      },
+      "message": "Merge branch 'main' into ltabb/duckdb-lateral-joins",
+      "tree": {
+        "sha": "0739e236e61d59eef2f96e647822a381fd2e6b12",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/0739e236e61d59eef2f96e647822a381fd2e6b12"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/6eaeec6efb63c2556c776b4b09aeccbe9864ae43",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/6eaeec6efb63c2556c776b4b09aeccbe9864ae43",
+    "html_url": "https://github.com/malloydata/malloy/commit/6eaeec6efb63c2556c776b4b09aeccbe9864ae43",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/6eaeec6efb63c2556c776b4b09aeccbe9864ae43/comments",
+    "author": {
+      "login": "lloydtabb",
+      "id": 1093458,
+      "node_id": "MDQ6VXNlcjEwOTM0NTg=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1093458?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lloydtabb",
+      "html_url": "https://github.com/lloydtabb",
+      "followers_url": "https://api.github.com/users/lloydtabb/followers",
+      "following_url": "https://api.github.com/users/lloydtabb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lloydtabb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lloydtabb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lloydtabb/subscriptions",
+      "organizations_url": "https://api.github.com/users/lloydtabb/orgs",
+      "repos_url": "https://api.github.com/users/lloydtabb/repos",
+      "events_url": "https://api.github.com/users/lloydtabb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lloydtabb/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "lloydtabb",
+      "id": 1093458,
+      "node_id": "MDQ6VXNlcjEwOTM0NTg=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1093458?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lloydtabb",
+      "html_url": "https://github.com/lloydtabb",
+      "followers_url": "https://api.github.com/users/lloydtabb/followers",
+      "following_url": "https://api.github.com/users/lloydtabb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lloydtabb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lloydtabb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lloydtabb/subscriptions",
+      "organizations_url": "https://api.github.com/users/lloydtabb/orgs",
+      "repos_url": "https://api.github.com/users/lloydtabb/repos",
+      "events_url": "https://api.github.com/users/lloydtabb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lloydtabb/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "da037c89ae1b8b401d88cf8f498f47c1d101d8a6",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/da037c89ae1b8b401d88cf8f498f47c1d101d8a6",
+        "html_url": "https://github.com/malloydata/malloy/commit/da037c89ae1b8b401d88cf8f498f47c1d101d8a6"
+      },
+      {
+        "sha": "4721a132a4f0bea7a6b2d1557398dfb8b4cd4c5f",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/4721a132a4f0bea7a6b2d1557398dfb8b4cd4c5f",
+        "html_url": "https://github.com/malloydata/malloy/commit/4721a132a4f0bea7a6b2d1557398dfb8b4cd4c5f"
+      }
+    ]
+  },
+  {
+    "sha": "df12242753eac9cd7f106991159f0724fd90925b",
+    "node_id": "C_kwDOF5ZoRtoAKGRmMTIyNDI3NTNlYWM5Y2Q3ZjEwNjk5MTE1OWYwNzI0ZmQ5MDkyNWI",
+    "commit": {
+      "author": {
+        "name": "Carina Koo",
+        "email": "carinakoo@gmail.com",
+        "date": "2023-05-05T23:08:05Z"
+      },
+      "committer": {
+        "name": "Carina Koo",
+        "email": "carinakoo@gmail.com",
+        "date": "2023-05-05T23:08:05Z"
+      },
+      "message": "accept credentials body and projectId for BQ auth",
+      "tree": {
+        "sha": "4b055976069fc410418ede64125f72264240ab0c",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/4b055976069fc410418ede64125f72264240ab0c"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/df12242753eac9cd7f106991159f0724fd90925b",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/df12242753eac9cd7f106991159f0724fd90925b",
+    "html_url": "https://github.com/malloydata/malloy/commit/df12242753eac9cd7f106991159f0724fd90925b",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/df12242753eac9cd7f106991159f0724fd90925b/comments",
+    "author": {
+      "login": "carinakoo",
+      "id": 191872,
+      "node_id": "MDQ6VXNlcjE5MTg3Mg==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/191872?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/carinakoo",
+      "html_url": "https://github.com/carinakoo",
+      "followers_url": "https://api.github.com/users/carinakoo/followers",
+      "following_url": "https://api.github.com/users/carinakoo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/carinakoo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/carinakoo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/carinakoo/subscriptions",
+      "organizations_url": "https://api.github.com/users/carinakoo/orgs",
+      "repos_url": "https://api.github.com/users/carinakoo/repos",
+      "events_url": "https://api.github.com/users/carinakoo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/carinakoo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "carinakoo",
+      "id": 191872,
+      "node_id": "MDQ6VXNlcjE5MTg3Mg==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/191872?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/carinakoo",
+      "html_url": "https://github.com/carinakoo",
+      "followers_url": "https://api.github.com/users/carinakoo/followers",
+      "following_url": "https://api.github.com/users/carinakoo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/carinakoo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/carinakoo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/carinakoo/subscriptions",
+      "organizations_url": "https://api.github.com/users/carinakoo/orgs",
+      "repos_url": "https://api.github.com/users/carinakoo/repos",
+      "events_url": "https://api.github.com/users/carinakoo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/carinakoo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "4721a132a4f0bea7a6b2d1557398dfb8b4cd4c5f",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/4721a132a4f0bea7a6b2d1557398dfb8b4cd4c5f",
+        "html_url": "https://github.com/malloydata/malloy/commit/4721a132a4f0bea7a6b2d1557398dfb8b4cd4c5f"
+      }
+    ]
+  },
+  {
+    "sha": "4721a132a4f0bea7a6b2d1557398dfb8b4cd4c5f",
+    "node_id": "C_kwDOF5ZoRtoAKDQ3MjFhMTMyYTRmMGJlYTdhNmIyZDE1NTczOThkZmI4YjRjZDRjNWY",
+    "commit": {
+      "author": {
+        "name": "lloyd tabb",
+        "email": "ltabb@google.com",
+        "date": "2023-05-05T15:24:09Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2023-05-05T15:24:09Z"
+      },
+      "message": "Merge pull request #1096 from malloydata/ltabb/average-sym\n\nCalculation error on Symmetric Averages.",
+      "tree": {
+        "sha": "7ce13d0fb1ceb7250362d4bc4394a68809d6bde1",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/7ce13d0fb1ceb7250362d4bc4394a68809d6bde1"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/4721a132a4f0bea7a6b2d1557398dfb8b4cd4c5f",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJkVR+ZCRBK7hj4Ov3rIwAAIfoIABVU0EAGpr8YP61HGPj9UODH\nMqWcQbumtH208BGDhmerYSf9oCdDBAMS+Xft3CrQVx5w0/Dl5nRkJRQ17hx+WCuO\nHPg3WLsZgUvaH8nwYcJMR5nKMLsOFgqujLGpowRaz5tCaPAus93lEGfhhC7UaIID\nLIA2g+56G+d0o+WD+leRTu3Rs+H9+Xuv6aDSWg/8J0Lo1xjPtPbZw5mrBqPVgpN0\nH2DAn2E8qOtbu7cKOJIW8SbcvKWJSNWo5K0EHFW7lSt6WXKqYmRWO+JwJiqQ8vKo\nWTs8Qes52ZPLKMft42vPGMZoWiLsoYCaaJ6G7YplQxFzlu/fYSDuLyIMjxQc4oo=\n=blXj\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 7ce13d0fb1ceb7250362d4bc4394a68809d6bde1\nparent 0bd294ce206f88a107b52532b9a6d0ae849babe4\nparent 5de69ff52cc7b5a375c7901b1df66910897f2098\nauthor lloyd tabb <ltabb@google.com> 1683300249 -0500\ncommitter GitHub <noreply@github.com> 1683300249 -0500\n\nMerge pull request #1096 from malloydata/ltabb/average-sym\n\nCalculation error on Symmetric Averages."
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/4721a132a4f0bea7a6b2d1557398dfb8b4cd4c5f",
+    "html_url": "https://github.com/malloydata/malloy/commit/4721a132a4f0bea7a6b2d1557398dfb8b4cd4c5f",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/4721a132a4f0bea7a6b2d1557398dfb8b4cd4c5f/comments",
+    "author": {
+      "login": "lloydtabb",
+      "id": 1093458,
+      "node_id": "MDQ6VXNlcjEwOTM0NTg=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1093458?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lloydtabb",
+      "html_url": "https://github.com/lloydtabb",
+      "followers_url": "https://api.github.com/users/lloydtabb/followers",
+      "following_url": "https://api.github.com/users/lloydtabb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lloydtabb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lloydtabb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lloydtabb/subscriptions",
+      "organizations_url": "https://api.github.com/users/lloydtabb/orgs",
+      "repos_url": "https://api.github.com/users/lloydtabb/repos",
+      "events_url": "https://api.github.com/users/lloydtabb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lloydtabb/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "0bd294ce206f88a107b52532b9a6d0ae849babe4",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/0bd294ce206f88a107b52532b9a6d0ae849babe4",
+        "html_url": "https://github.com/malloydata/malloy/commit/0bd294ce206f88a107b52532b9a6d0ae849babe4"
+      },
+      {
+        "sha": "5de69ff52cc7b5a375c7901b1df66910897f2098",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/5de69ff52cc7b5a375c7901b1df66910897f2098",
+        "html_url": "https://github.com/malloydata/malloy/commit/5de69ff52cc7b5a375c7901b1df66910897f2098"
+      }
+    ]
+  },
+  {
+    "sha": "5de69ff52cc7b5a375c7901b1df66910897f2098",
+    "node_id": "C_kwDOF5ZoRtoAKDVkZTY5ZmY1MmNjN2I1YTM3NWM3OTAxYjFkZjY2OTEwODk3ZjIwOTg",
+    "commit": {
+      "author": {
+        "name": "lloydtabb",
+        "email": "ltabb@google.com",
+        "date": "2023-05-05T14:56:32Z"
+      },
+      "committer": {
+        "name": "lloydtabb",
+        "email": "ltabb@google.com",
+        "date": "2023-05-05T14:56:32Z"
+      },
+      "message": "postgres wants aliases everywhere",
+      "tree": {
+        "sha": "7ce13d0fb1ceb7250362d4bc4394a68809d6bde1",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/7ce13d0fb1ceb7250362d4bc4394a68809d6bde1"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/5de69ff52cc7b5a375c7901b1df66910897f2098",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/5de69ff52cc7b5a375c7901b1df66910897f2098",
+    "html_url": "https://github.com/malloydata/malloy/commit/5de69ff52cc7b5a375c7901b1df66910897f2098",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/5de69ff52cc7b5a375c7901b1df66910897f2098/comments",
+    "author": {
+      "login": "lloydtabb",
+      "id": 1093458,
+      "node_id": "MDQ6VXNlcjEwOTM0NTg=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1093458?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lloydtabb",
+      "html_url": "https://github.com/lloydtabb",
+      "followers_url": "https://api.github.com/users/lloydtabb/followers",
+      "following_url": "https://api.github.com/users/lloydtabb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lloydtabb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lloydtabb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lloydtabb/subscriptions",
+      "organizations_url": "https://api.github.com/users/lloydtabb/orgs",
+      "repos_url": "https://api.github.com/users/lloydtabb/repos",
+      "events_url": "https://api.github.com/users/lloydtabb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lloydtabb/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "lloydtabb",
+      "id": 1093458,
+      "node_id": "MDQ6VXNlcjEwOTM0NTg=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1093458?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lloydtabb",
+      "html_url": "https://github.com/lloydtabb",
+      "followers_url": "https://api.github.com/users/lloydtabb/followers",
+      "following_url": "https://api.github.com/users/lloydtabb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lloydtabb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lloydtabb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lloydtabb/subscriptions",
+      "organizations_url": "https://api.github.com/users/lloydtabb/orgs",
+      "repos_url": "https://api.github.com/users/lloydtabb/repos",
+      "events_url": "https://api.github.com/users/lloydtabb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lloydtabb/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "c3189a24c0493ccd682af91c835d320cfc554150",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/c3189a24c0493ccd682af91c835d320cfc554150",
+        "html_url": "https://github.com/malloydata/malloy/commit/c3189a24c0493ccd682af91c835d320cfc554150"
+      }
+    ]
+  },
+  {
+    "sha": "c3189a24c0493ccd682af91c835d320cfc554150",
+    "node_id": "C_kwDOF5ZoRtoAKGMzMTg5YTI0YzA0OTNjY2Q2ODJhZjkxYzgzNWQzMjBjZmM1NTQxNTA",
+    "commit": {
+      "author": {
+        "name": "lloydtabb",
+        "email": "ltabb@google.com",
+        "date": "2023-05-05T14:33:53Z"
+      },
+      "committer": {
+        "name": "lloydtabb",
+        "email": "ltabb@google.com",
+        "date": "2023-05-05T14:33:53Z"
+      },
+      "message": "bad SQL",
+      "tree": {
+        "sha": "c6410e1818e3f5c55ad2a6491b762205002176ae",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/c6410e1818e3f5c55ad2a6491b762205002176ae"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/c3189a24c0493ccd682af91c835d320cfc554150",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/c3189a24c0493ccd682af91c835d320cfc554150",
+    "html_url": "https://github.com/malloydata/malloy/commit/c3189a24c0493ccd682af91c835d320cfc554150",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/c3189a24c0493ccd682af91c835d320cfc554150/comments",
+    "author": {
+      "login": "lloydtabb",
+      "id": 1093458,
+      "node_id": "MDQ6VXNlcjEwOTM0NTg=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1093458?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lloydtabb",
+      "html_url": "https://github.com/lloydtabb",
+      "followers_url": "https://api.github.com/users/lloydtabb/followers",
+      "following_url": "https://api.github.com/users/lloydtabb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lloydtabb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lloydtabb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lloydtabb/subscriptions",
+      "organizations_url": "https://api.github.com/users/lloydtabb/orgs",
+      "repos_url": "https://api.github.com/users/lloydtabb/repos",
+      "events_url": "https://api.github.com/users/lloydtabb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lloydtabb/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "lloydtabb",
+      "id": 1093458,
+      "node_id": "MDQ6VXNlcjEwOTM0NTg=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1093458?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lloydtabb",
+      "html_url": "https://github.com/lloydtabb",
+      "followers_url": "https://api.github.com/users/lloydtabb/followers",
+      "following_url": "https://api.github.com/users/lloydtabb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lloydtabb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lloydtabb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lloydtabb/subscriptions",
+      "organizations_url": "https://api.github.com/users/lloydtabb/orgs",
+      "repos_url": "https://api.github.com/users/lloydtabb/repos",
+      "events_url": "https://api.github.com/users/lloydtabb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lloydtabb/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "672b06459f8980644680c31bb573abc89e1ef6df",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/672b06459f8980644680c31bb573abc89e1ef6df",
+        "html_url": "https://github.com/malloydata/malloy/commit/672b06459f8980644680c31bb573abc89e1ef6df"
+      }
+    ]
+  },
+  {
+    "sha": "672b06459f8980644680c31bb573abc89e1ef6df",
+    "node_id": "C_kwDOF5ZoRtoAKDY3MmIwNjQ1OWY4OTgwNjQ0NjgwYzMxYmI1NzNhYmM4OWUxZWY2ZGY",
+    "commit": {
+      "author": {
+        "name": "lloydtabb",
+        "email": "ltabb@google.com",
+        "date": "2023-05-05T14:17:11Z"
+      },
+      "committer": {
+        "name": "lloydtabb",
+        "email": "ltabb@google.com",
+        "date": "2023-05-05T14:17:11Z"
+      },
+      "message": "Calculation error on Symmetric Averages.",
+      "tree": {
+        "sha": "fa3145d8bddc889af474703476c31aa3bda20e3d",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/fa3145d8bddc889af474703476c31aa3bda20e3d"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/672b06459f8980644680c31bb573abc89e1ef6df",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/672b06459f8980644680c31bb573abc89e1ef6df",
+    "html_url": "https://github.com/malloydata/malloy/commit/672b06459f8980644680c31bb573abc89e1ef6df",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/672b06459f8980644680c31bb573abc89e1ef6df/comments",
+    "author": {
+      "login": "lloydtabb",
+      "id": 1093458,
+      "node_id": "MDQ6VXNlcjEwOTM0NTg=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1093458?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lloydtabb",
+      "html_url": "https://github.com/lloydtabb",
+      "followers_url": "https://api.github.com/users/lloydtabb/followers",
+      "following_url": "https://api.github.com/users/lloydtabb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lloydtabb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lloydtabb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lloydtabb/subscriptions",
+      "organizations_url": "https://api.github.com/users/lloydtabb/orgs",
+      "repos_url": "https://api.github.com/users/lloydtabb/repos",
+      "events_url": "https://api.github.com/users/lloydtabb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lloydtabb/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "lloydtabb",
+      "id": 1093458,
+      "node_id": "MDQ6VXNlcjEwOTM0NTg=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1093458?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lloydtabb",
+      "html_url": "https://github.com/lloydtabb",
+      "followers_url": "https://api.github.com/users/lloydtabb/followers",
+      "following_url": "https://api.github.com/users/lloydtabb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lloydtabb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lloydtabb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lloydtabb/subscriptions",
+      "organizations_url": "https://api.github.com/users/lloydtabb/orgs",
+      "repos_url": "https://api.github.com/users/lloydtabb/repos",
+      "events_url": "https://api.github.com/users/lloydtabb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lloydtabb/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "0bd294ce206f88a107b52532b9a6d0ae849babe4",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/0bd294ce206f88a107b52532b9a6d0ae849babe4",
+        "html_url": "https://github.com/malloydata/malloy/commit/0bd294ce206f88a107b52532b9a6d0ae849babe4"
+      }
+    ]
+  },
+  {
+    "sha": "0bd294ce206f88a107b52532b9a6d0ae849babe4",
+    "node_id": "C_kwDOF5ZoRtoAKDBiZDI5NGNlMjA2Zjg4YTEwN2I1MjUzMmI5YTZkMGFlODQ5YmFiZTQ",
+    "commit": {
+      "author": {
+        "name": "Chandan Bhagwat",
+        "email": "srs.chandan@gmail.com",
+        "date": "2023-04-28T00:16:30Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2023-04-28T00:16:30Z"
+      },
+      "message": "Tweak linter   - quote props (#1088)\n\n* fix unquoted record keys\r\n\r\n* Change linter rules to allow quoted keys.\r\n\r\n* npm run lint-fix\r\n\r\n---------\r\n\r\nCo-authored-by: Chandan <cbhagwat@google.com>",
+      "tree": {
+        "sha": "d7619026c6036381c8cd95799d34ae14c06b8c45",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/d7619026c6036381c8cd95799d34ae14c06b8c45"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/0bd294ce206f88a107b52532b9a6d0ae849babe4",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJkSxBeCRBK7hj4Ov3rIwAAOI0IAFtAmZaI5jDIGAKrBztekOao\n2XDbhP4Ya/YohbH9RqdYBVfaBiqaG4fA0ZrMy3st05q01gXRutOLPIFIrMKFIriJ\nA4hK1BD8o4qzoEilobylwzJkgqeBGGNrvU6HQEEuR0U7jPswnxJKKEUzs108Xarb\nKOdPnWZR5Uv0IrfLKb/Xu3ofteXyCDLXeNtMFUGpwW/B0DLovx5lPrG7uCdx6Rxz\nwRG7VUShPjObge0ih9Y+CVJaHl2rVM+wtG0rRA1fcHq79E5QPA33/TK0gYVQhPoE\n/2wFUDqqsKzzV1j0an3SQJ0kaiGnjxipwZQtRfv+fq44DLRODVzl2E4hkE5APYQ=\n=rfVM\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree d7619026c6036381c8cd95799d34ae14c06b8c45\nparent ddd76044077d8ce63e9ac6a29c898f9da9d4f3be\nauthor Chandan Bhagwat <srs.chandan@gmail.com> 1682640990 +0000\ncommitter GitHub <noreply@github.com> 1682640990 -0700\n\nTweak linter   - quote props (#1088)\n\n* fix unquoted record keys\r\n\r\n* Change linter rules to allow quoted keys.\r\n\r\n* npm run lint-fix\r\n\r\n---------\r\n\r\nCo-authored-by: Chandan <cbhagwat@google.com>"
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/0bd294ce206f88a107b52532b9a6d0ae849babe4",
+    "html_url": "https://github.com/malloydata/malloy/commit/0bd294ce206f88a107b52532b9a6d0ae849babe4",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/0bd294ce206f88a107b52532b9a6d0ae849babe4/comments",
+    "author": {
+      "login": "srschandan",
+      "id": 10955828,
+      "node_id": "MDQ6VXNlcjEwOTU1ODI4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10955828?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/srschandan",
+      "html_url": "https://github.com/srschandan",
+      "followers_url": "https://api.github.com/users/srschandan/followers",
+      "following_url": "https://api.github.com/users/srschandan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/srschandan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/srschandan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/srschandan/subscriptions",
+      "organizations_url": "https://api.github.com/users/srschandan/orgs",
+      "repos_url": "https://api.github.com/users/srschandan/repos",
+      "events_url": "https://api.github.com/users/srschandan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/srschandan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "ddd76044077d8ce63e9ac6a29c898f9da9d4f3be",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/ddd76044077d8ce63e9ac6a29c898f9da9d4f3be",
+        "html_url": "https://github.com/malloydata/malloy/commit/ddd76044077d8ce63e9ac6a29c898f9da9d4f3be"
+      }
+    ]
+  },
+  {
+    "sha": "ddd76044077d8ce63e9ac6a29c898f9da9d4f3be",
+    "node_id": "C_kwDOF5ZoRtoAKGRkZDc2MDQ0MDc3ZDhjZTYzZTlhYzZhMjljODk4ZjlkYTlkNGYzYmU",
+    "commit": {
+      "author": {
+        "name": "Ben Porterfield",
+        "email": "bporterfield@users.noreply.github.com",
+        "date": "2023-04-27T17:09:09Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2023-04-27T17:09:09Z"
+      },
+      "message": "Merge pull request #1086 from malloydata/openJobInConsole\n\nstart BQ job and return URL to open in console",
+      "tree": {
+        "sha": "a4ae7ce985fce66b3919e6361cb0ac41914cf439",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/a4ae7ce985fce66b3919e6361cb0ac41914cf439"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/ddd76044077d8ce63e9ac6a29c898f9da9d4f3be",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJkSqw1CRBK7hj4Ov3rIwAATXwIAIFiLtU/D2hw1AP0hExToyQ/\nSmPn7U8xVzqnq7PzB835JGRfVXhRQM5jFT4VbZMDRUFKdg/qhTL2t3KvrLapubSq\nQs/SvIWcPrxrmum1sK/d2epcA/4bUSIyyiHi1aip4rIvQcV9Cn8TXHN0/Fy2+aKW\npSoENan4a00aBlLkr9Dvpy3AxHncZ3U+VCBX/t/MuUBKE8l0UBSgCW4UxdXihGEw\nQAFQVzjk3UeRkqPXf+o01vPfn7MCi130cUJGCTYrGtUZQth7F+2XDrmBbnGFIdbm\nS4oUk9MAnfo5Yd7G6+sk+4PFSG8IcJtSUI6s02y51YzSXjsFAZS+HEccdHDXllw=\n=IUHB\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree a4ae7ce985fce66b3919e6361cb0ac41914cf439\nparent 5036ed2a87ddea2b0bb81231a497b39136aff659\nparent 0d0de11f43ae1c1a06983d3a0a70a94a9987b1e8\nauthor Ben Porterfield <bporterfield@users.noreply.github.com> 1682615349 -0700\ncommitter GitHub <noreply@github.com> 1682615349 -0700\n\nMerge pull request #1086 from malloydata/openJobInConsole\n\nstart BQ job and return URL to open in console"
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/ddd76044077d8ce63e9ac6a29c898f9da9d4f3be",
+    "html_url": "https://github.com/malloydata/malloy/commit/ddd76044077d8ce63e9ac6a29c898f9da9d4f3be",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/ddd76044077d8ce63e9ac6a29c898f9da9d4f3be/comments",
+    "author": {
+      "login": "bporterfield",
+      "id": 108260,
+      "node_id": "MDQ6VXNlcjEwODI2MA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/108260?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bporterfield",
+      "html_url": "https://github.com/bporterfield",
+      "followers_url": "https://api.github.com/users/bporterfield/followers",
+      "following_url": "https://api.github.com/users/bporterfield/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bporterfield/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bporterfield/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bporterfield/subscriptions",
+      "organizations_url": "https://api.github.com/users/bporterfield/orgs",
+      "repos_url": "https://api.github.com/users/bporterfield/repos",
+      "events_url": "https://api.github.com/users/bporterfield/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bporterfield/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "5036ed2a87ddea2b0bb81231a497b39136aff659",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/5036ed2a87ddea2b0bb81231a497b39136aff659",
+        "html_url": "https://github.com/malloydata/malloy/commit/5036ed2a87ddea2b0bb81231a497b39136aff659"
+      },
+      {
+        "sha": "0d0de11f43ae1c1a06983d3a0a70a94a9987b1e8",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/0d0de11f43ae1c1a06983d3a0a70a94a9987b1e8",
+        "html_url": "https://github.com/malloydata/malloy/commit/0d0de11f43ae1c1a06983d3a0a70a94a9987b1e8"
+      }
+    ]
+  },
+  {
+    "sha": "0d0de11f43ae1c1a06983d3a0a70a94a9987b1e8",
+    "node_id": "C_kwDOF5ZoRtoAKDBkMGRlMTFmNDNhZTFjMWEwNjk4M2QzYTBhNzBhOTRhOTk4N2IxZTg",
+    "commit": {
+      "author": {
+        "name": "Ben Porterfield",
+        "email": "bporterfield@google.com",
+        "date": "2023-04-27T16:33:42Z"
+      },
+      "committer": {
+        "name": "Ben Porterfield",
+        "email": "bporterfield@google.com",
+        "date": "2023-04-27T16:33:42Z"
+      },
+      "message": "start BQ job and return URL to open in console",
+      "tree": {
+        "sha": "a4ae7ce985fce66b3919e6361cb0ac41914cf439",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/a4ae7ce985fce66b3919e6361cb0ac41914cf439"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/0d0de11f43ae1c1a06983d3a0a70a94a9987b1e8",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/0d0de11f43ae1c1a06983d3a0a70a94a9987b1e8",
+    "html_url": "https://github.com/malloydata/malloy/commit/0d0de11f43ae1c1a06983d3a0a70a94a9987b1e8",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/0d0de11f43ae1c1a06983d3a0a70a94a9987b1e8/comments",
+    "author": {
+      "login": "bporterfield",
+      "id": 108260,
+      "node_id": "MDQ6VXNlcjEwODI2MA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/108260?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bporterfield",
+      "html_url": "https://github.com/bporterfield",
+      "followers_url": "https://api.github.com/users/bporterfield/followers",
+      "following_url": "https://api.github.com/users/bporterfield/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bporterfield/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bporterfield/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bporterfield/subscriptions",
+      "organizations_url": "https://api.github.com/users/bporterfield/orgs",
+      "repos_url": "https://api.github.com/users/bporterfield/repos",
+      "events_url": "https://api.github.com/users/bporterfield/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bporterfield/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "bporterfield",
+      "id": 108260,
+      "node_id": "MDQ6VXNlcjEwODI2MA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/108260?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bporterfield",
+      "html_url": "https://github.com/bporterfield",
+      "followers_url": "https://api.github.com/users/bporterfield/followers",
+      "following_url": "https://api.github.com/users/bporterfield/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bporterfield/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bporterfield/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bporterfield/subscriptions",
+      "organizations_url": "https://api.github.com/users/bporterfield/orgs",
+      "repos_url": "https://api.github.com/users/bporterfield/repos",
+      "events_url": "https://api.github.com/users/bporterfield/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bporterfield/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "5036ed2a87ddea2b0bb81231a497b39136aff659",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/5036ed2a87ddea2b0bb81231a497b39136aff659",
+        "html_url": "https://github.com/malloydata/malloy/commit/5036ed2a87ddea2b0bb81231a497b39136aff659"
+      }
+    ]
+  },
+  {
+    "sha": "5036ed2a87ddea2b0bb81231a497b39136aff659",
+    "node_id": "C_kwDOF5ZoRtoAKDUwMzZlZDJhODdkZGVhMmIwYmI4MTIzMWE0OTdiMzkxMzZhZmY2NTk",
+    "commit": {
+      "author": {
+        "name": "Malloy CI Bot",
+        "email": "malloy-ci-bot@google.com",
+        "date": "2023-04-14T17:40:45Z"
+      },
+      "committer": {
+        "name": "Malloy CI Bot",
+        "email": "malloy-ci-bot@google.com",
+        "date": "2023-04-14T17:40:45Z"
+      },
+      "message": "Version 0.0.32-dev",
+      "tree": {
+        "sha": "ecdccf6195efc602354faefb48d9ee05e4f24687",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/ecdccf6195efc602354faefb48d9ee05e4f24687"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/5036ed2a87ddea2b0bb81231a497b39136aff659",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/5036ed2a87ddea2b0bb81231a497b39136aff659",
+    "html_url": "https://github.com/malloydata/malloy/commit/5036ed2a87ddea2b0bb81231a497b39136aff659",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/5036ed2a87ddea2b0bb81231a497b39136aff659/comments",
+    "author": {
+      "login": "malloydataci",
+      "id": 119628741,
+      "node_id": "U_kgDOByFjxQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/119628741?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/malloydataci",
+      "html_url": "https://github.com/malloydataci",
+      "followers_url": "https://api.github.com/users/malloydataci/followers",
+      "following_url": "https://api.github.com/users/malloydataci/following{/other_user}",
+      "gists_url": "https://api.github.com/users/malloydataci/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/malloydataci/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/malloydataci/subscriptions",
+      "organizations_url": "https://api.github.com/users/malloydataci/orgs",
+      "repos_url": "https://api.github.com/users/malloydataci/repos",
+      "events_url": "https://api.github.com/users/malloydataci/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/malloydataci/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "malloydataci",
+      "id": 119628741,
+      "node_id": "U_kgDOByFjxQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/119628741?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/malloydataci",
+      "html_url": "https://github.com/malloydataci",
+      "followers_url": "https://api.github.com/users/malloydataci/followers",
+      "following_url": "https://api.github.com/users/malloydataci/following{/other_user}",
+      "gists_url": "https://api.github.com/users/malloydataci/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/malloydataci/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/malloydataci/subscriptions",
+      "organizations_url": "https://api.github.com/users/malloydataci/orgs",
+      "repos_url": "https://api.github.com/users/malloydataci/repos",
+      "events_url": "https://api.github.com/users/malloydataci/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/malloydataci/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f374db4572077d0973931344e2d32633864f3ac3",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/f374db4572077d0973931344e2d32633864f3ac3",
+        "html_url": "https://github.com/malloydata/malloy/commit/f374db4572077d0973931344e2d32633864f3ac3"
+      }
+    ]
+  },
+  {
+    "sha": "f374db4572077d0973931344e2d32633864f3ac3",
+    "node_id": "C_kwDOF5ZoRtoAKGYzNzRkYjQ1NzIwNzdkMDk3MzkzMTM0NGUyZDMyNjMzODY0ZjNhYzM",
+    "commit": {
+      "author": {
+        "name": "Caleb Li",
+        "email": "72431553+caleb-c-li@users.noreply.github.com",
+        "date": "2023-04-14T14:51:57Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2023-04-14T14:51:57Z"
+      },
+      "message": "Merge pull request #1081 from caleb-c-li/bq\n\nSupport Explore object serialization with JSON",
+      "tree": {
+        "sha": "93001993cd4e0ff0700c0f6a935caf4822cf8522",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/93001993cd4e0ff0700c0f6a935caf4822cf8522"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/f374db4572077d0973931344e2d32633864f3ac3",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJkOWiNCRBK7hj4Ov3rIwAAg0EIAA/5oG8KS3+Rzhoeis+d/JBF\nO7Ji7/e1YrBuyMO0FjLrLkKKHzdjzdbALn6ctyn+K49ArU0+bzYpZ/I45oJsfwLF\nbF18ZPntdBYhb1oKb0e/yQVYRwk4I03MXew6nFicb7TYSyCn/z0s0LEWzvfQymKu\nwhYWhK6Ae1O1g9t+hJoDiwc/2cBmzNgiYpYWqn1JQqITEfOtsJdBdh2quvv0aRJo\nVavQ54RpdIoIXATDjfijy19D846sJIDxVGuZbTcpRDe9Q/BCGzEl6YfSK/n9pEEg\ndjYCS5bNzBh8jBcjODh/bBYuT6xScwkcWCfXXK8OGrXMlAqffSBomZoKN/gBlt8=\n=aqDN\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 93001993cd4e0ff0700c0f6a935caf4822cf8522\nparent 8394aede607db8374c91c879cbf75ed6765cb128\nparent 2393bc3ff7461da05982277d92b7a189217479d9\nauthor Caleb Li <72431553+caleb-c-li@users.noreply.github.com> 1681483917 -0700\ncommitter GitHub <noreply@github.com> 1681483917 -0700\n\nMerge pull request #1081 from caleb-c-li/bq\n\nSupport Explore object serialization with JSON"
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/f374db4572077d0973931344e2d32633864f3ac3",
+    "html_url": "https://github.com/malloydata/malloy/commit/f374db4572077d0973931344e2d32633864f3ac3",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/f374db4572077d0973931344e2d32633864f3ac3/comments",
+    "author": {
+      "login": "caleb-c-li",
+      "id": 72431553,
+      "node_id": "MDQ6VXNlcjcyNDMxNTUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/72431553?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/caleb-c-li",
+      "html_url": "https://github.com/caleb-c-li",
+      "followers_url": "https://api.github.com/users/caleb-c-li/followers",
+      "following_url": "https://api.github.com/users/caleb-c-li/following{/other_user}",
+      "gists_url": "https://api.github.com/users/caleb-c-li/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/caleb-c-li/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/caleb-c-li/subscriptions",
+      "organizations_url": "https://api.github.com/users/caleb-c-li/orgs",
+      "repos_url": "https://api.github.com/users/caleb-c-li/repos",
+      "events_url": "https://api.github.com/users/caleb-c-li/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/caleb-c-li/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "8394aede607db8374c91c879cbf75ed6765cb128",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/8394aede607db8374c91c879cbf75ed6765cb128",
+        "html_url": "https://github.com/malloydata/malloy/commit/8394aede607db8374c91c879cbf75ed6765cb128"
+      },
+      {
+        "sha": "2393bc3ff7461da05982277d92b7a189217479d9",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/2393bc3ff7461da05982277d92b7a189217479d9",
+        "html_url": "https://github.com/malloydata/malloy/commit/2393bc3ff7461da05982277d92b7a189217479d9"
+      }
+    ]
+  },
+  {
+    "sha": "2393bc3ff7461da05982277d92b7a189217479d9",
+    "node_id": "C_kwDOF5ZoRtoAKDIzOTNiYzNmZjc0NjFkYTA1OTgyMjc3ZDkyYjdhMTg5MjE3NDc5ZDk",
+    "commit": {
+      "author": {
+        "name": "Caleb Li",
+        "email": "calebli@google.com",
+        "date": "2023-04-12T22:09:32Z"
+      },
+      "committer": {
+        "name": "Caleb Li",
+        "email": "calebli@google.com",
+        "date": "2023-04-13T17:56:04Z"
+      },
+      "message": "Support Explore object serialization with JSON",
+      "tree": {
+        "sha": "93001993cd4e0ff0700c0f6a935caf4822cf8522",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/93001993cd4e0ff0700c0f6a935caf4822cf8522"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/2393bc3ff7461da05982277d92b7a189217479d9",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/2393bc3ff7461da05982277d92b7a189217479d9",
+    "html_url": "https://github.com/malloydata/malloy/commit/2393bc3ff7461da05982277d92b7a189217479d9",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/2393bc3ff7461da05982277d92b7a189217479d9/comments",
+    "author": {
+      "login": "caleb-c-li",
+      "id": 72431553,
+      "node_id": "MDQ6VXNlcjcyNDMxNTUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/72431553?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/caleb-c-li",
+      "html_url": "https://github.com/caleb-c-li",
+      "followers_url": "https://api.github.com/users/caleb-c-li/followers",
+      "following_url": "https://api.github.com/users/caleb-c-li/following{/other_user}",
+      "gists_url": "https://api.github.com/users/caleb-c-li/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/caleb-c-li/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/caleb-c-li/subscriptions",
+      "organizations_url": "https://api.github.com/users/caleb-c-li/orgs",
+      "repos_url": "https://api.github.com/users/caleb-c-li/repos",
+      "events_url": "https://api.github.com/users/caleb-c-li/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/caleb-c-li/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "caleb-c-li",
+      "id": 72431553,
+      "node_id": "MDQ6VXNlcjcyNDMxNTUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/72431553?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/caleb-c-li",
+      "html_url": "https://github.com/caleb-c-li",
+      "followers_url": "https://api.github.com/users/caleb-c-li/followers",
+      "following_url": "https://api.github.com/users/caleb-c-li/following{/other_user}",
+      "gists_url": "https://api.github.com/users/caleb-c-li/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/caleb-c-li/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/caleb-c-li/subscriptions",
+      "organizations_url": "https://api.github.com/users/caleb-c-li/orgs",
+      "repos_url": "https://api.github.com/users/caleb-c-li/repos",
+      "events_url": "https://api.github.com/users/caleb-c-li/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/caleb-c-li/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "8394aede607db8374c91c879cbf75ed6765cb128",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/8394aede607db8374c91c879cbf75ed6765cb128",
+        "html_url": "https://github.com/malloydata/malloy/commit/8394aede607db8374c91c879cbf75ed6765cb128"
+      }
+    ]
+  },
+  {
+    "sha": "8394aede607db8374c91c879cbf75ed6765cb128",
+    "node_id": "C_kwDOF5ZoRtoAKDgzOTRhZWRlNjA3ZGI4Mzc0YzkxYzg3OWNiZjc1ZWQ2NzY1Y2IxMjg",
+    "commit": {
+      "author": {
+        "name": "Malloy CI Bot",
+        "email": "malloy-ci-bot@google.com",
+        "date": "2023-04-06T15:31:07Z"
+      },
+      "committer": {
+        "name": "Malloy CI Bot",
+        "email": "malloy-ci-bot@google.com",
+        "date": "2023-04-06T15:31:07Z"
+      },
+      "message": "Version 0.0.31-dev",
+      "tree": {
+        "sha": "1238d110bb8ba05206cdb6e198fc3a36b7a18bd5",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/1238d110bb8ba05206cdb6e198fc3a36b7a18bd5"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/8394aede607db8374c91c879cbf75ed6765cb128",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/8394aede607db8374c91c879cbf75ed6765cb128",
+    "html_url": "https://github.com/malloydata/malloy/commit/8394aede607db8374c91c879cbf75ed6765cb128",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/8394aede607db8374c91c879cbf75ed6765cb128/comments",
+    "author": {
+      "login": "malloydataci",
+      "id": 119628741,
+      "node_id": "U_kgDOByFjxQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/119628741?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/malloydataci",
+      "html_url": "https://github.com/malloydataci",
+      "followers_url": "https://api.github.com/users/malloydataci/followers",
+      "following_url": "https://api.github.com/users/malloydataci/following{/other_user}",
+      "gists_url": "https://api.github.com/users/malloydataci/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/malloydataci/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/malloydataci/subscriptions",
+      "organizations_url": "https://api.github.com/users/malloydataci/orgs",
+      "repos_url": "https://api.github.com/users/malloydataci/repos",
+      "events_url": "https://api.github.com/users/malloydataci/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/malloydataci/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "malloydataci",
+      "id": 119628741,
+      "node_id": "U_kgDOByFjxQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/119628741?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/malloydataci",
+      "html_url": "https://github.com/malloydataci",
+      "followers_url": "https://api.github.com/users/malloydataci/followers",
+      "following_url": "https://api.github.com/users/malloydataci/following{/other_user}",
+      "gists_url": "https://api.github.com/users/malloydataci/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/malloydataci/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/malloydataci/subscriptions",
+      "organizations_url": "https://api.github.com/users/malloydataci/orgs",
+      "repos_url": "https://api.github.com/users/malloydataci/repos",
+      "events_url": "https://api.github.com/users/malloydataci/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/malloydataci/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f393977643c162aae4c084ebb6bc981a6094c345",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/f393977643c162aae4c084ebb6bc981a6094c345",
+        "html_url": "https://github.com/malloydata/malloy/commit/f393977643c162aae4c084ebb6bc981a6094c345"
+      }
+    ]
+  },
+  {
+    "sha": "f393977643c162aae4c084ebb6bc981a6094c345",
+    "node_id": "C_kwDOF5ZoRtoAKGYzOTM5Nzc2NDNjMTYyYWFlNGMwODRlYmI2YmM5ODFhNjA5NGMzNDU",
+    "commit": {
+      "author": {
+        "name": "Michael Toy",
+        "email": "66150587+mtoy-googly-moogly@users.noreply.github.com",
+        "date": "2023-04-05T21:16:47Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2023-04-05T21:16:47Z"
+      },
+      "message": "Merge pull request #1077 from malloydata/sql-block-workaround\n\nStructDef from sql: statement are now marked.\r\n\r\nWe clear that bit when we alias them into a source:\r\n\r\nThis allows us to treat sql blocks as if they were a thing which is neither a query nor structdef, and properly error when people forget to use from_sql (and not erroneously error when people do)\r\n\r\nKInd of a lot of work to maintain a distinction which none of us believe in, but this is the most peaceful thing for me, given that there is no guarantee we are actually going to get to source/query, this PR correctly implements the current intended semantics for SQL blocks.\r\n\r\nWe will undo this when we do source/query, and that's OK with me too.",
+      "tree": {
+        "sha": "d360a1a061672e4e5c6b28ce289eea57cf498602",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/d360a1a061672e4e5c6b28ce289eea57cf498602"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/f393977643c162aae4c084ebb6bc981a6094c345",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJkLeU/CRBK7hj4Ov3rIwAAoicIAJABAwE90nO1Pmpga25ef43D\nHump9gjn6YW3yh3ZRIebhPX+V7MMQ6CgINLW882U1w/31Jcua854yJ0if23eSJQI\nCj58Z1YVR1HU1kRM0u+hlzn9h0+hW3LUTqgA7JPR9Lg+olJT6zRh94jutySZ3ewl\nvDPAgXzagipSAGIdbVIxqOkT8EBeL9U+hkIQ7i2s29FsofyzeNUlsIVV9gHlP84p\niSYeILnqwq+KL5DDbvFcs482EhbWjUkAWw0EG11JF0kPhv/weLa6RDC1lSHPytXF\nwQ/9KSK9PY09qLrC1znCfewFK9qMdLO/nNIyELnhZfNbmVXgfxn2UgjytkX7aGc=\n=5ohS\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree d360a1a061672e4e5c6b28ce289eea57cf498602\nparent 653c52a12923403d7464814756a7b0aa86f90d60\nparent cde85e5e63c7ffc2e6af622e27d90ea686302731\nauthor Michael Toy <66150587+mtoy-googly-moogly@users.noreply.github.com> 1680729407 -1000\ncommitter GitHub <noreply@github.com> 1680729407 -1000\n\nMerge pull request #1077 from malloydata/sql-block-workaround\n\nStructDef from sql: statement are now marked.\r\n\r\nWe clear that bit when we alias them into a source:\r\n\r\nThis allows us to treat sql blocks as if they were a thing which is neither a query nor structdef, and properly error when people forget to use from_sql (and not erroneously error when people do)\r\n\r\nKInd of a lot of work to maintain a distinction which none of us believe in, but this is the most peaceful thing for me, given that there is no guarantee we are actually going to get to source/query, this PR correctly implements the current intended semantics for SQL blocks.\r\n\r\nWe will undo this when we do source/query, and that's OK with me too."
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/f393977643c162aae4c084ebb6bc981a6094c345",
+    "html_url": "https://github.com/malloydata/malloy/commit/f393977643c162aae4c084ebb6bc981a6094c345",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/f393977643c162aae4c084ebb6bc981a6094c345/comments",
+    "author": {
+      "login": "mtoy-googly-moogly",
+      "id": 66150587,
+      "node_id": "MDQ6VXNlcjY2MTUwNTg3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66150587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mtoy-googly-moogly",
+      "html_url": "https://github.com/mtoy-googly-moogly",
+      "followers_url": "https://api.github.com/users/mtoy-googly-moogly/followers",
+      "following_url": "https://api.github.com/users/mtoy-googly-moogly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mtoy-googly-moogly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mtoy-googly-moogly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mtoy-googly-moogly/subscriptions",
+      "organizations_url": "https://api.github.com/users/mtoy-googly-moogly/orgs",
+      "repos_url": "https://api.github.com/users/mtoy-googly-moogly/repos",
+      "events_url": "https://api.github.com/users/mtoy-googly-moogly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mtoy-googly-moogly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "653c52a12923403d7464814756a7b0aa86f90d60",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/653c52a12923403d7464814756a7b0aa86f90d60",
+        "html_url": "https://github.com/malloydata/malloy/commit/653c52a12923403d7464814756a7b0aa86f90d60"
+      },
+      {
+        "sha": "cde85e5e63c7ffc2e6af622e27d90ea686302731",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/cde85e5e63c7ffc2e6af622e27d90ea686302731",
+        "html_url": "https://github.com/malloydata/malloy/commit/cde85e5e63c7ffc2e6af622e27d90ea686302731"
+      }
+    ]
+  },
+  {
+    "sha": "653c52a12923403d7464814756a7b0aa86f90d60",
+    "node_id": "C_kwDOF5ZoRtoAKDY1M2M1MmExMjkyMzQwM2Q3NDY0ODE0NzU2YTdiMGFhODZmOTBkNjA",
+    "commit": {
+      "author": {
+        "name": "dependabot[bot]",
+        "email": "49699333+dependabot[bot]@users.noreply.github.com",
+        "date": "2023-04-05T20:09:14Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2023-04-05T20:09:14Z"
+      },
+      "message": "Bump vega from 5.22.1 to 5.23.0 (#1078)\n\nBumps [vega](https://github.com/vega/vega) from 5.22.1 to 5.23.0.\r\n- [Release notes](https://github.com/vega/vega/releases)\r\n- [Commits](https://github.com/vega/vega/compare/v5.22.1...v5.23.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: vega\r\n  dependency-type: direct:production\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+      "tree": {
+        "sha": "8859b1853f63144a49a54f23521f7931cb896029",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/8859b1853f63144a49a54f23521f7931cb896029"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/653c52a12923403d7464814756a7b0aa86f90d60",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJkLdVqCRBK7hj4Ov3rIwAAljUIAERWuqT9yHfI00WEGtVMMeWi\nSV3Q9xm2JK+y4mh8gx0HIbDuT0TBmkgqtHb8LRQKbf9AgGd6dISWOhPpvaURO3K9\nXAwvZeSLWXCxNXnqLmD7qzZpi1ObKf00ih7lZWdOOMqZyWOtPbWcZ942fvBOImyQ\n4MJc1+lDCKrqRRP0+b8+NGV4PaDoko5zsGmy1Jbg7+f+5Qcb9EYhJzZsVD7nRCxR\nFb1E4roIUxYURP5ala1tt6CuunHqI5F+hMvd2DYnzDoftj0GSsMaNXGN4cWwtfdv\nH5oiXaI6RAVch8zZys+Q6/cKg+YUD5XhFpYk6HE7FaYd90rI27nCyTWQbb8bz+k=\n=XCiI\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 8859b1853f63144a49a54f23521f7931cb896029\nparent be0bc50b94fdfac93694e30a246cb0e7d10f4380\nauthor dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> 1680725354 -0700\ncommitter GitHub <noreply@github.com> 1680725354 -0700\n\nBump vega from 5.22.1 to 5.23.0 (#1078)\n\nBumps [vega](https://github.com/vega/vega) from 5.22.1 to 5.23.0.\r\n- [Release notes](https://github.com/vega/vega/releases)\r\n- [Commits](https://github.com/vega/vega/compare/v5.22.1...v5.23.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: vega\r\n  dependency-type: direct:production\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/653c52a12923403d7464814756a7b0aa86f90d60",
+    "html_url": "https://github.com/malloydata/malloy/commit/653c52a12923403d7464814756a7b0aa86f90d60",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/653c52a12923403d7464814756a7b0aa86f90d60/comments",
+    "author": {
+      "login": "dependabot[bot]",
+      "id": 49699333,
+      "node_id": "MDM6Qm90NDk2OTkzMzM=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dependabot%5Bbot%5D",
+      "html_url": "https://github.com/apps/dependabot",
+      "followers_url": "https://api.github.com/users/dependabot%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/dependabot%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dependabot%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dependabot%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dependabot%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/dependabot%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/dependabot%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/dependabot%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dependabot%5Bbot%5D/received_events",
+      "type": "Bot",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "be0bc50b94fdfac93694e30a246cb0e7d10f4380",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/be0bc50b94fdfac93694e30a246cb0e7d10f4380",
+        "html_url": "https://github.com/malloydata/malloy/commit/be0bc50b94fdfac93694e30a246cb0e7d10f4380"
+      }
+    ]
+  },
+  {
+    "sha": "cde85e5e63c7ffc2e6af622e27d90ea686302731",
+    "node_id": "C_kwDOF5ZoRtoAKGNkZTg1ZTVlNjNjN2ZmYzJlNmFmNjIyZTI3ZDkwZWE2ODYzMDI3MzE",
+    "commit": {
+      "author": {
+        "name": "Michael Toy",
+        "email": "mtoy@google.com",
+        "date": "2023-04-05T18:31:28Z"
+      },
+      "committer": {
+        "name": "Michael Toy",
+        "email": "mtoy@google.com",
+        "date": "2023-04-05T18:31:28Z"
+      },
+      "message": "fix references to sql blocks",
+      "tree": {
+        "sha": "eb92125f4cf49510faf731205208aeb2f525b2eb",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/eb92125f4cf49510faf731205208aeb2f525b2eb"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/cde85e5e63c7ffc2e6af622e27d90ea686302731",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/cde85e5e63c7ffc2e6af622e27d90ea686302731",
+    "html_url": "https://github.com/malloydata/malloy/commit/cde85e5e63c7ffc2e6af622e27d90ea686302731",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/cde85e5e63c7ffc2e6af622e27d90ea686302731/comments",
+    "author": {
+      "login": "mtoy-googly-moogly",
+      "id": 66150587,
+      "node_id": "MDQ6VXNlcjY2MTUwNTg3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66150587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mtoy-googly-moogly",
+      "html_url": "https://github.com/mtoy-googly-moogly",
+      "followers_url": "https://api.github.com/users/mtoy-googly-moogly/followers",
+      "following_url": "https://api.github.com/users/mtoy-googly-moogly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mtoy-googly-moogly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mtoy-googly-moogly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mtoy-googly-moogly/subscriptions",
+      "organizations_url": "https://api.github.com/users/mtoy-googly-moogly/orgs",
+      "repos_url": "https://api.github.com/users/mtoy-googly-moogly/repos",
+      "events_url": "https://api.github.com/users/mtoy-googly-moogly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mtoy-googly-moogly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "mtoy-googly-moogly",
+      "id": 66150587,
+      "node_id": "MDQ6VXNlcjY2MTUwNTg3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66150587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mtoy-googly-moogly",
+      "html_url": "https://github.com/mtoy-googly-moogly",
+      "followers_url": "https://api.github.com/users/mtoy-googly-moogly/followers",
+      "following_url": "https://api.github.com/users/mtoy-googly-moogly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mtoy-googly-moogly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mtoy-googly-moogly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mtoy-googly-moogly/subscriptions",
+      "organizations_url": "https://api.github.com/users/mtoy-googly-moogly/orgs",
+      "repos_url": "https://api.github.com/users/mtoy-googly-moogly/repos",
+      "events_url": "https://api.github.com/users/mtoy-googly-moogly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mtoy-googly-moogly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "c906d5d3bf86b8fb5f5a9e03ca683c3d4c061cba",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/c906d5d3bf86b8fb5f5a9e03ca683c3d4c061cba",
+        "html_url": "https://github.com/malloydata/malloy/commit/c906d5d3bf86b8fb5f5a9e03ca683c3d4c061cba"
+      }
+    ]
+  },
+  {
+    "sha": "c906d5d3bf86b8fb5f5a9e03ca683c3d4c061cba",
+    "node_id": "C_kwDOF5ZoRtoAKGM5MDZkNWQzYmY4NmI4ZmI1ZjVhOWUwM2NhNjgzYzNkNGMwNjFjYmE",
+    "commit": {
+      "author": {
+        "name": "Michael Toy",
+        "email": "mtoy@google.com",
+        "date": "2023-04-05T18:14:04Z"
+      },
+      "committer": {
+        "name": "Michael Toy",
+        "email": "mtoy@google.com",
+        "date": "2023-04-05T18:14:04Z"
+      },
+      "message": "differentiate sql-blocks from sources",
+      "tree": {
+        "sha": "8051142eb5eb5c64b978adb0cf15aab4dab6b861",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/8051142eb5eb5c64b978adb0cf15aab4dab6b861"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/c906d5d3bf86b8fb5f5a9e03ca683c3d4c061cba",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/c906d5d3bf86b8fb5f5a9e03ca683c3d4c061cba",
+    "html_url": "https://github.com/malloydata/malloy/commit/c906d5d3bf86b8fb5f5a9e03ca683c3d4c061cba",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/c906d5d3bf86b8fb5f5a9e03ca683c3d4c061cba/comments",
+    "author": {
+      "login": "mtoy-googly-moogly",
+      "id": 66150587,
+      "node_id": "MDQ6VXNlcjY2MTUwNTg3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66150587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mtoy-googly-moogly",
+      "html_url": "https://github.com/mtoy-googly-moogly",
+      "followers_url": "https://api.github.com/users/mtoy-googly-moogly/followers",
+      "following_url": "https://api.github.com/users/mtoy-googly-moogly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mtoy-googly-moogly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mtoy-googly-moogly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mtoy-googly-moogly/subscriptions",
+      "organizations_url": "https://api.github.com/users/mtoy-googly-moogly/orgs",
+      "repos_url": "https://api.github.com/users/mtoy-googly-moogly/repos",
+      "events_url": "https://api.github.com/users/mtoy-googly-moogly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mtoy-googly-moogly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "mtoy-googly-moogly",
+      "id": 66150587,
+      "node_id": "MDQ6VXNlcjY2MTUwNTg3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66150587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mtoy-googly-moogly",
+      "html_url": "https://github.com/mtoy-googly-moogly",
+      "followers_url": "https://api.github.com/users/mtoy-googly-moogly/followers",
+      "following_url": "https://api.github.com/users/mtoy-googly-moogly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mtoy-googly-moogly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mtoy-googly-moogly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mtoy-googly-moogly/subscriptions",
+      "organizations_url": "https://api.github.com/users/mtoy-googly-moogly/orgs",
+      "repos_url": "https://api.github.com/users/mtoy-googly-moogly/repos",
+      "events_url": "https://api.github.com/users/mtoy-googly-moogly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mtoy-googly-moogly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f396fd3190e456ebb4500ce12545b7b5b4174965",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/f396fd3190e456ebb4500ce12545b7b5b4174965",
+        "html_url": "https://github.com/malloydata/malloy/commit/f396fd3190e456ebb4500ce12545b7b5b4174965"
+      }
+    ]
+  },
+  {
+    "sha": "f396fd3190e456ebb4500ce12545b7b5b4174965",
+    "node_id": "C_kwDOF5ZoRtoAKGYzOTZmZDMxOTBlNDU2ZWJiNDUwMGNlMTI1NDViN2I1YjQxNzQ5NjU",
+    "commit": {
+      "author": {
+        "name": "Michael Toy",
+        "email": "mtoy@google.com",
+        "date": "2023-04-05T18:09:11Z"
+      },
+      "committer": {
+        "name": "Michael Toy",
+        "email": "mtoy@google.com",
+        "date": "2023-04-05T18:09:11Z"
+      },
+      "message": "mark sql blocks in structdef",
+      "tree": {
+        "sha": "29504ee30a3b62c822733f90637eda74e27fac2b",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/29504ee30a3b62c822733f90637eda74e27fac2b"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/f396fd3190e456ebb4500ce12545b7b5b4174965",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/f396fd3190e456ebb4500ce12545b7b5b4174965",
+    "html_url": "https://github.com/malloydata/malloy/commit/f396fd3190e456ebb4500ce12545b7b5b4174965",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/f396fd3190e456ebb4500ce12545b7b5b4174965/comments",
+    "author": {
+      "login": "mtoy-googly-moogly",
+      "id": 66150587,
+      "node_id": "MDQ6VXNlcjY2MTUwNTg3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66150587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mtoy-googly-moogly",
+      "html_url": "https://github.com/mtoy-googly-moogly",
+      "followers_url": "https://api.github.com/users/mtoy-googly-moogly/followers",
+      "following_url": "https://api.github.com/users/mtoy-googly-moogly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mtoy-googly-moogly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mtoy-googly-moogly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mtoy-googly-moogly/subscriptions",
+      "organizations_url": "https://api.github.com/users/mtoy-googly-moogly/orgs",
+      "repos_url": "https://api.github.com/users/mtoy-googly-moogly/repos",
+      "events_url": "https://api.github.com/users/mtoy-googly-moogly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mtoy-googly-moogly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "mtoy-googly-moogly",
+      "id": 66150587,
+      "node_id": "MDQ6VXNlcjY2MTUwNTg3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66150587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mtoy-googly-moogly",
+      "html_url": "https://github.com/mtoy-googly-moogly",
+      "followers_url": "https://api.github.com/users/mtoy-googly-moogly/followers",
+      "following_url": "https://api.github.com/users/mtoy-googly-moogly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mtoy-googly-moogly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mtoy-googly-moogly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mtoy-googly-moogly/subscriptions",
+      "organizations_url": "https://api.github.com/users/mtoy-googly-moogly/orgs",
+      "repos_url": "https://api.github.com/users/mtoy-googly-moogly/repos",
+      "events_url": "https://api.github.com/users/mtoy-googly-moogly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mtoy-googly-moogly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "777cfdf8a38d53b0cad410125092aa9115fd71da",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/777cfdf8a38d53b0cad410125092aa9115fd71da",
+        "html_url": "https://github.com/malloydata/malloy/commit/777cfdf8a38d53b0cad410125092aa9115fd71da"
+      }
+    ]
+  },
+  {
+    "sha": "777cfdf8a38d53b0cad410125092aa9115fd71da",
+    "node_id": "C_kwDOF5ZoRtoAKDc3N2NmZGY4YTM4ZDUzYjBjYWQ0MTAxMjUwOTJhYTkxMTVmZDcxZGE",
+    "commit": {
+      "author": {
+        "name": "Michael Toy",
+        "email": "mtoy@google.com",
+        "date": "2023-04-04T23:47:07Z"
+      },
+      "committer": {
+        "name": "Michael Toy",
+        "email": "mtoy@google.com",
+        "date": "2023-04-04T23:47:07Z"
+      },
+      "message": "split sql block based tests into their own file",
+      "tree": {
+        "sha": "2b2674692c9fe5775d99c722df5c78c85e179205",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/2b2674692c9fe5775d99c722df5c78c85e179205"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/777cfdf8a38d53b0cad410125092aa9115fd71da",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/777cfdf8a38d53b0cad410125092aa9115fd71da",
+    "html_url": "https://github.com/malloydata/malloy/commit/777cfdf8a38d53b0cad410125092aa9115fd71da",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/777cfdf8a38d53b0cad410125092aa9115fd71da/comments",
+    "author": {
+      "login": "mtoy-googly-moogly",
+      "id": 66150587,
+      "node_id": "MDQ6VXNlcjY2MTUwNTg3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66150587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mtoy-googly-moogly",
+      "html_url": "https://github.com/mtoy-googly-moogly",
+      "followers_url": "https://api.github.com/users/mtoy-googly-moogly/followers",
+      "following_url": "https://api.github.com/users/mtoy-googly-moogly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mtoy-googly-moogly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mtoy-googly-moogly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mtoy-googly-moogly/subscriptions",
+      "organizations_url": "https://api.github.com/users/mtoy-googly-moogly/orgs",
+      "repos_url": "https://api.github.com/users/mtoy-googly-moogly/repos",
+      "events_url": "https://api.github.com/users/mtoy-googly-moogly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mtoy-googly-moogly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "mtoy-googly-moogly",
+      "id": 66150587,
+      "node_id": "MDQ6VXNlcjY2MTUwNTg3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66150587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mtoy-googly-moogly",
+      "html_url": "https://github.com/mtoy-googly-moogly",
+      "followers_url": "https://api.github.com/users/mtoy-googly-moogly/followers",
+      "following_url": "https://api.github.com/users/mtoy-googly-moogly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mtoy-googly-moogly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mtoy-googly-moogly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mtoy-googly-moogly/subscriptions",
+      "organizations_url": "https://api.github.com/users/mtoy-googly-moogly/orgs",
+      "repos_url": "https://api.github.com/users/mtoy-googly-moogly/repos",
+      "events_url": "https://api.github.com/users/mtoy-googly-moogly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mtoy-googly-moogly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "cc4655889b13f17f1f1607efd8bc3d09b1babde1",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/cc4655889b13f17f1f1607efd8bc3d09b1babde1",
+        "html_url": "https://github.com/malloydata/malloy/commit/cc4655889b13f17f1f1607efd8bc3d09b1babde1"
+      }
+    ]
+  },
+  {
+    "sha": "cc4655889b13f17f1f1607efd8bc3d09b1babde1",
+    "node_id": "C_kwDOF5ZoRtoAKGNjNDY1NTg4OWIxM2YxN2YxZjE2MDdlZmQ4YmMzZDA5YjFiYWJkZTE",
+    "commit": {
+      "author": {
+        "name": "Michael Toy",
+        "email": "mtoy@google.com",
+        "date": "2023-04-04T23:46:27Z"
+      },
+      "committer": {
+        "name": "Michael Toy",
+        "email": "mtoy@google.com",
+        "date": "2023-04-04T23:46:27Z"
+      },
+      "message": "extend sql block sourcs into models corrrectly",
+      "tree": {
+        "sha": "015d95ed87ad32bbdd7f17a42078f939e43d3cde",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/015d95ed87ad32bbdd7f17a42078f939e43d3cde"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/cc4655889b13f17f1f1607efd8bc3d09b1babde1",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/cc4655889b13f17f1f1607efd8bc3d09b1babde1",
+    "html_url": "https://github.com/malloydata/malloy/commit/cc4655889b13f17f1f1607efd8bc3d09b1babde1",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/cc4655889b13f17f1f1607efd8bc3d09b1babde1/comments",
+    "author": {
+      "login": "mtoy-googly-moogly",
+      "id": 66150587,
+      "node_id": "MDQ6VXNlcjY2MTUwNTg3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66150587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mtoy-googly-moogly",
+      "html_url": "https://github.com/mtoy-googly-moogly",
+      "followers_url": "https://api.github.com/users/mtoy-googly-moogly/followers",
+      "following_url": "https://api.github.com/users/mtoy-googly-moogly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mtoy-googly-moogly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mtoy-googly-moogly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mtoy-googly-moogly/subscriptions",
+      "organizations_url": "https://api.github.com/users/mtoy-googly-moogly/orgs",
+      "repos_url": "https://api.github.com/users/mtoy-googly-moogly/repos",
+      "events_url": "https://api.github.com/users/mtoy-googly-moogly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mtoy-googly-moogly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "mtoy-googly-moogly",
+      "id": 66150587,
+      "node_id": "MDQ6VXNlcjY2MTUwNTg3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66150587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mtoy-googly-moogly",
+      "html_url": "https://github.com/mtoy-googly-moogly",
+      "followers_url": "https://api.github.com/users/mtoy-googly-moogly/followers",
+      "following_url": "https://api.github.com/users/mtoy-googly-moogly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mtoy-googly-moogly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mtoy-googly-moogly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mtoy-googly-moogly/subscriptions",
+      "organizations_url": "https://api.github.com/users/mtoy-googly-moogly/orgs",
+      "repos_url": "https://api.github.com/users/mtoy-googly-moogly/repos",
+      "events_url": "https://api.github.com/users/mtoy-googly-moogly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mtoy-googly-moogly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "7dd0169d5100fcfd5ae9db5a41db1e4fa1966ff8",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/7dd0169d5100fcfd5ae9db5a41db1e4fa1966ff8",
+        "html_url": "https://github.com/malloydata/malloy/commit/7dd0169d5100fcfd5ae9db5a41db1e4fa1966ff8"
+      }
+    ]
+  },
+  {
+    "sha": "be0bc50b94fdfac93694e30a246cb0e7d10f4380",
+    "node_id": "C_kwDOF5ZoRtoAKGJlMGJjNTBiOTRmZGZhYzkzNjk0ZTMwYTI0NmNiMGU3ZDEwZjQzODA",
+    "commit": {
+      "author": {
+        "name": "Malloy CI Bot",
+        "email": "malloy-ci-bot@google.com",
+        "date": "2023-04-03T23:24:11Z"
+      },
+      "committer": {
+        "name": "Malloy CI Bot",
+        "email": "malloy-ci-bot@google.com",
+        "date": "2023-04-03T23:24:11Z"
+      },
+      "message": "Version 0.0.30-dev",
+      "tree": {
+        "sha": "c3d935c28c9966ff05556b197a137459fd93a47b",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/c3d935c28c9966ff05556b197a137459fd93a47b"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/be0bc50b94fdfac93694e30a246cb0e7d10f4380",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/be0bc50b94fdfac93694e30a246cb0e7d10f4380",
+    "html_url": "https://github.com/malloydata/malloy/commit/be0bc50b94fdfac93694e30a246cb0e7d10f4380",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/be0bc50b94fdfac93694e30a246cb0e7d10f4380/comments",
+    "author": {
+      "login": "malloydataci",
+      "id": 119628741,
+      "node_id": "U_kgDOByFjxQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/119628741?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/malloydataci",
+      "html_url": "https://github.com/malloydataci",
+      "followers_url": "https://api.github.com/users/malloydataci/followers",
+      "following_url": "https://api.github.com/users/malloydataci/following{/other_user}",
+      "gists_url": "https://api.github.com/users/malloydataci/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/malloydataci/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/malloydataci/subscriptions",
+      "organizations_url": "https://api.github.com/users/malloydataci/orgs",
+      "repos_url": "https://api.github.com/users/malloydataci/repos",
+      "events_url": "https://api.github.com/users/malloydataci/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/malloydataci/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "malloydataci",
+      "id": 119628741,
+      "node_id": "U_kgDOByFjxQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/119628741?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/malloydataci",
+      "html_url": "https://github.com/malloydataci",
+      "followers_url": "https://api.github.com/users/malloydataci/followers",
+      "following_url": "https://api.github.com/users/malloydataci/following{/other_user}",
+      "gists_url": "https://api.github.com/users/malloydataci/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/malloydataci/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/malloydataci/subscriptions",
+      "organizations_url": "https://api.github.com/users/malloydataci/orgs",
+      "repos_url": "https://api.github.com/users/malloydataci/repos",
+      "events_url": "https://api.github.com/users/malloydataci/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/malloydataci/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "7dd0169d5100fcfd5ae9db5a41db1e4fa1966ff8",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/7dd0169d5100fcfd5ae9db5a41db1e4fa1966ff8",
+        "html_url": "https://github.com/malloydata/malloy/commit/7dd0169d5100fcfd5ae9db5a41db1e4fa1966ff8"
+      }
+    ]
+  },
+  {
+    "sha": "7dd0169d5100fcfd5ae9db5a41db1e4fa1966ff8",
+    "node_id": "C_kwDOF5ZoRtoAKDdkZDAxNjlkNTEwMGZjZmQ1YWU5ZGI1YTQxZGIxZTRmYTE5NjZmZjg",
+    "commit": {
+      "author": {
+        "name": "Will Scullin",
+        "email": "willscullin@google.com",
+        "date": "2023-03-30T22:30:11Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2023-03-30T22:30:11Z"
+      },
+      "message": "Find SQL tables (#1075)\n\nMake an effort to pick out tables from SQL that may not have shown up as a source prior.",
+      "tree": {
+        "sha": "87a69d2f0e27b5cf8266d19bbb0382c586dc8375",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/87a69d2f0e27b5cf8266d19bbb0382c586dc8375"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/7dd0169d5100fcfd5ae9db5a41db1e4fa1966ff8",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJkJg1zCRBK7hj4Ov3rIwAArl0IAFXuTrvf2q1IYmTBjoZYNOwj\ngULB/EeaPESe/xOhM5d/eRvoyuhsR+HBogEQJJd+kaeSAfcAhDBFtYjHVqQcJq35\n0ZXEZyFXjA9mcYbyJ0FuIod92vr2c0TOowRh1WQ4Ht2WDSz35F+ilTWQjbXQouDd\nIjA5dY+4pYwmvd+d4OKbqZajp+dLTf3IVhZhFT6iewyS5ChwETyqDxZPZSwg9rh0\nvikTjpeoQpktNwCekTWVsfpOGUoJGHrkJMYEsBm/cS9IHOFSQW+V0w1vP4kXeqws\nO7XK8v7gR9Vaert254xeR9PWm9mdeAPbWx5D7XHO5plP+YF3jutKWMBVk5DtjE0=\n=/a3p\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 87a69d2f0e27b5cf8266d19bbb0382c586dc8375\nparent 735bacd3b721fcd29dd7f55cd067a39d0d12aa33\nauthor Will Scullin <willscullin@google.com> 1680215411 -0700\ncommitter GitHub <noreply@github.com> 1680215411 -0700\n\nFind SQL tables (#1075)\n\nMake an effort to pick out tables from SQL that may not have shown up as a source prior."
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/7dd0169d5100fcfd5ae9db5a41db1e4fa1966ff8",
+    "html_url": "https://github.com/malloydata/malloy/commit/7dd0169d5100fcfd5ae9db5a41db1e4fa1966ff8",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/7dd0169d5100fcfd5ae9db5a41db1e4fa1966ff8/comments",
+    "author": {
+      "login": "whscullin",
+      "id": 2958002,
+      "node_id": "MDQ6VXNlcjI5NTgwMDI=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2958002?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/whscullin",
+      "html_url": "https://github.com/whscullin",
+      "followers_url": "https://api.github.com/users/whscullin/followers",
+      "following_url": "https://api.github.com/users/whscullin/following{/other_user}",
+      "gists_url": "https://api.github.com/users/whscullin/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/whscullin/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/whscullin/subscriptions",
+      "organizations_url": "https://api.github.com/users/whscullin/orgs",
+      "repos_url": "https://api.github.com/users/whscullin/repos",
+      "events_url": "https://api.github.com/users/whscullin/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/whscullin/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "735bacd3b721fcd29dd7f55cd067a39d0d12aa33",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/735bacd3b721fcd29dd7f55cd067a39d0d12aa33",
+        "html_url": "https://github.com/malloydata/malloy/commit/735bacd3b721fcd29dd7f55cd067a39d0d12aa33"
+      }
+    ]
+  },
+  {
+    "sha": "735bacd3b721fcd29dd7f55cd067a39d0d12aa33",
+    "node_id": "C_kwDOF5ZoRtoAKDczNWJhY2QzYjcyMWZjZDI5ZGQ3ZjU1Y2QwNjdhMzlkMGQxMmFhMzM",
+    "commit": {
+      "author": {
+        "name": "Will Scullin",
+        "email": "willscullin@google.com",
+        "date": "2023-03-30T17:55:01Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2023-03-30T17:55:01Z"
+      },
+      "message": "Use custom duckdb-wasm (#1071)\n\nUse our custom build of duckdb-wasm to have access to the icu and json extensions.",
+      "tree": {
+        "sha": "03d28a6b3aa2b0479346f3521fca012b1997deb9",
+        "url": "https://api.github.com/repos/malloydata/malloy/git/trees/03d28a6b3aa2b0479346f3521fca012b1997deb9"
+      },
+      "url": "https://api.github.com/repos/malloydata/malloy/git/commits/735bacd3b721fcd29dd7f55cd067a39d0d12aa33",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJkJcz1CRBK7hj4Ov3rIwAA0jUIACT/n+qUlNs7YVPxHcc/7UBg\n3QOqRgfbFYbybuSQ45o9fyzgwLoMgjJCIMeitRRrh0aOht2pUgBqh0GgDEA1WrTB\nX4TR0xslx9oDVbIxExlc3ZJKG2nMTH2pLylVUdUorVzG8bOSKb+uUQlYPWHq72X8\nwC+yk6FfTUoiSAvdOp572h1Ipzc0vaRCzTJ5bzxeUkjYF8miN8QdGddAmETrYyCe\nR1vjO3iovGFCcX1zKouuikF7Onc9o/do6U1EbH2zd8Y0iAkVzion2N8R/9jfhSw3\nlOr62cOeTObYo3Dy0WEKlFLICzNbDXGRzC/pPaXPOWK602+o0XRyRm5sfSUzyYY=\n=TIjN\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 03d28a6b3aa2b0479346f3521fca012b1997deb9\nparent ca44f0ce34c949d2c9317cc1ef1d386c8d423818\nauthor Will Scullin <willscullin@google.com> 1680198901 -0700\ncommitter GitHub <noreply@github.com> 1680198901 -0700\n\nUse custom duckdb-wasm (#1071)\n\nUse our custom build of duckdb-wasm to have access to the icu and json extensions."
+      }
+    },
+    "url": "https://api.github.com/repos/malloydata/malloy/commits/735bacd3b721fcd29dd7f55cd067a39d0d12aa33",
+    "html_url": "https://github.com/malloydata/malloy/commit/735bacd3b721fcd29dd7f55cd067a39d0d12aa33",
+    "comments_url": "https://api.github.com/repos/malloydata/malloy/commits/735bacd3b721fcd29dd7f55cd067a39d0d12aa33/comments",
+    "author": {
+      "login": "whscullin",
+      "id": 2958002,
+      "node_id": "MDQ6VXNlcjI5NTgwMDI=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2958002?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/whscullin",
+      "html_url": "https://github.com/whscullin",
+      "followers_url": "https://api.github.com/users/whscullin/followers",
+      "following_url": "https://api.github.com/users/whscullin/following{/other_user}",
+      "gists_url": "https://api.github.com/users/whscullin/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/whscullin/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/whscullin/subscriptions",
+      "organizations_url": "https://api.github.com/users/whscullin/orgs",
+      "repos_url": "https://api.github.com/users/whscullin/repos",
+      "events_url": "https://api.github.com/users/whscullin/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/whscullin/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "ca44f0ce34c949d2c9317cc1ef1d386c8d423818",
+        "url": "https://api.github.com/repos/malloydata/malloy/commits/ca44f0ce34c949d2c9317cc1ef1d386c8d423818",
+        "html_url": "https://github.com/malloydata/malloy/commit/ca44f0ce34c949d2c9317cc1ef1d386c8d423818"
+      }
+    ]
+  }
+]
