@@ -8,7 +8,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query:  table('duckdb:data/airports.parquet') -> {\n  index: *\n} -> {\n  project: *\n  order_by: weight desc\n}",
+    "value": "query:  table('duckdb:data/airports.parquet') -> {\n  index: *\n} -> {\n  project: *\n  where: fieldType = 'string' and fieldValue != null\n  order_by: weight desc\n}",
     "metadata": {}
   },
   {
