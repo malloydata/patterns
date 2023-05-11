@@ -5,6 +5,12 @@ To run these examples
 * press `.`  (the period key) to run vscode
 * Install the Malloy Extension when prompted (or manually)
 
+## Working with Nested Data
+Malloy natively understands how to work with tables that have nested structs 
+and arrays (including raw JSON) and makes easy to query and transform. 
+
+[Nested Data](nested_data.malloynb)
+
 ## Sessionization
 Take list of individual flights and map/reduce into individual aircraft sessions per day.  Display their routes for each day on a map.  Classic Map/Reduce.
 
@@ -22,7 +28,7 @@ Sometime data comes in with duplicates.  We can base a query on a SQL Query to r
 
 [Dedup Rows](dedup_rows.malloynb)
 
-## Querying from Web API
+## Querying Data directly from a Web API
 
 Using DuckDB wwe can query from Web API endpoints.  This example pulls from the github and runs some transformation queries against the results
 
@@ -32,3 +38,4 @@ Using DuckDB wwe can query from Web API endpoints.  This example pulls from the 
 Malloy has a special 'index' operator that produces a result that contains all the low cardinality values in a graph weighed by whatever measure you like.  The index can be built by reading the whole graph or sampling a subset of records.  The index is useful in suggesting filters and for basic understanding of a data set.
 
 [Malloy Indexes](index.malloynb)
+
