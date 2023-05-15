@@ -1,0 +1,12 @@
+// Transform a JSON file.
+// 
+query: table('duckdb:data/commits.json') -> {
+  group_by: author.login
+  aggregate: commit_count is count()
+  nest: by_commit is {
+    group_by: 
+      commit.committer.`date`
+      commit.message
+      html_url
+  }
+}

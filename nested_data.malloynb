@@ -32,6 +32,12 @@
   {
     "kind": 2,
     "language": "malloy",
+    "value": "",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
     "value": "query: table('duckdb:data/commits.json') -> {\n  group_by: author.login\n  aggregate: commit_count is count()\n  nest: by_commit is {\n    group_by: \n      commit.committer.`date`\n      commit.message\n      html_url\n  }\n}",
     "metadata": {}
   }
