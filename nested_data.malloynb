@@ -2,7 +2,7 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "# Working with Nested Data\nData often comes in a nested structure, where information is organized hierarchically. BigQuery and DuckDB have built-in support for reading tables with nested data and extracting information from these nested structures.\n\nWhen working with nested data in Malloy, it becomes remarkably simple. In Malloy, a nested array or struct is treated as a built-in join_many operation. You can effortlessly access the desired data using dot notation.\n\nFor example, in this dataset, there are repeated structures such as hits, pageviews, and product. To perform aggregate calculations, you can specify the complete path to the numeric value and select the appropriate aggregate function. Malloy refers to this as aggregate locality, ensuring accurate calculations regardless of the join pattern used.\n\nMalloy simplifies working with nested data by treating it as a natural part of the data model. It provides convenient access to nested structures using dot notation and ensures reliable aggregate calculations regardless of the join pattern employed.\n\nBelow is the *partial* schema for Google Analytics. \n\n<img src=\"img/ga_schema.webp\">\n\nAnd a very simple Malloy model describing the interesting some interesting calculations.",
+    "value": "# Working with Nested Data\nData often comes in a nested structure, where information is organized hierarchically. BigQuery and DuckDB have built-in support for reading tables with nested data and extracting information from these nested structures.\n\nWhen working with nested data in Malloy, it becomes remarkably simple. In Malloy, a nested array or struct is treated as a built-in join_many operation. You can effortlessly access the desired data using dot notation.\n\nFor example, in Google Analytics data, the top level object is sessions. There are repeated structures such as hits, pageviews, and products and more.  Querying this data in SQL is difficult. \n\nBelow is the *partial* schema for Google Analytics. \n\n<img src=\"img/ga_schema.webp\">\n\nTo perform aggregate calculation in Malloy, you can simply specify the complete path to the numeric value and select the appropriate aggregate function. Malloy refers to this as aggregate locality, ensuring accurate calculations regardless of the join pattern used.\n\nWhen writing a query, you can group by any path in this heiracy. Malloy ensures reliable aggregate calculations regardless of how the query is prespress..\n\n\n## A simple Google Analytics Semantic model\n\nAnd a very simple Malloy model describing the interesting some interesting calculations.",
     "metadata": {}
   },
   {
@@ -38,13 +38,13 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "## Nested Data can also be from JSON\nDuckdb natively reads JSON and JSON often contains nested element.  \ncan easily transform on JSON structure into another.\n\nStarting with this *[example json file](data/commits.json)*, we can write a query \nto transform it.",
+    "value": "## With Nested Results",
     "metadata": {}
   },
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query: table('duckdb:data/commits.json') -> {\n  group_by: author.login\n  aggregate: commit_count is count()\n  nest: by_commit is {\n    group_by: \n      commit.committer.`date`\n      commit.message\n      html_url\n  }\n}",
+    "value": "  query: ga_sessions -> {\n    group_by: device.browser\n    aggregate: \n      user_count\n      total_visits\n      total_hits\n      total_page_views\n      sold_count\n    nest: by_source is {\n      where: trafficSource.source != '(direct)'\n      group_by: trafficSource.source\n      aggregate: \n        hits_count\n        total_visits\n        session_count\n        user_count\n      limit: 10\n    }\n  }",
     "metadata": {}
   }
 ]
