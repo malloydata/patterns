@@ -8,7 +8,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "source:ga_sessions is table('duckdb:data/ga_sample.parquet'){\n  measure:\n    user_count is count(distinct fullVisitorId)\n    session_count is count()\n    total_visits is totals.visits.sum()\n    total_hits is totals.hits.sum()\n    total_page_views is totals.pageviews.sum()\n    t2 is totals.pageviews.sum()\n    total_productRevenue is hits.product.productRevenue.sum()\n    hits_count is hits.count()\n    sold_count is hits.count() { where: hits.product.productQuantity > 0 }\n}",
+    "value": "source:ga_sessions is table('duckdb:data/ga_sample.parquet'){\n  measure:\n    user_count is count(distinct fullVisitorId)\n    percent_of_users is user_count/all(user_count)*100\n    session_count is count()\n    total_visits is totals.visits.sum()\n    total_hits is totals.hits.sum()\n    total_page_views is totals.pageviews.sum()\n    t2 is totals.pageviews.sum()\n    total_productRevenue is hits.product.productRevenue.sum()\n    hits_count is hits.count()\n    sold_count is hits.count() { where: hits.product.productQuantity > 0 }\n}",
     "metadata": {}
   },
   {
@@ -20,7 +20,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": " query: ga_sessions -> {\n    where: trafficSource.source != '(direct)'\n    group_by: trafficSource.source\n    aggregate: \n      hits_count\n      total_visits\n      session_count\n      user_count\n    limit: 10\n  }",
+    "value": " query: ga_sessions -> {\n    where: trafficSource.source != '(direct)'\n    group_by: trafficSource.source\n    aggregate: \n      user_count\n      percent_of_users\n      hits_count\n      total_visits\n      session_count\n    limit: 10\n  }",
     "metadata": {}
   },
   {
@@ -32,7 +32,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "  query: ga_sessions -> {\n    group_by: device.browser\n    aggregate: \n      user_count\n      total_visits\n      total_hits\n      total_page_views\n      sold_count\n  }",
+    "value": "  query: ga_sessions -> {\n    group_by: device.browser\n    aggregate: \n      user_count\n      percent_of_users\n      total_visits\n      total_hits\n      total_page_views\n      sold_count\n  }",
     "metadata": {}
   },
   {
@@ -44,7 +44,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "  query: ga_sessions -> {\n    group_by: device.browser\n    aggregate: \n      user_count\n      total_visits\n      total_hits\n      total_page_views\n      sold_count\n    nest: by_source is {\n      where: trafficSource.source != '(direct)'\n      group_by: trafficSource.source\n      aggregate: \n        hits_count\n        total_visits\n        session_count\n        user_count\n      limit: 10\n    }\n  }",
+    "value": "  query: ga_sessions -> {\n    group_by: device.browser\n    aggregate: \n      user_count\n      percent_of_users\n      total_visits\n      total_hits\n      total_page_views\n      sold_count\n    nest: by_source is {\n      where: trafficSource.source != '(direct)'\n      group_by: trafficSource.source\n      aggregate: \n        user_count\n        percent_of_users\n        hits_count\n        total_visits\n        session_count\n      limit: 10\n    }\n  }",
     "metadata": {}
   }
 ]
