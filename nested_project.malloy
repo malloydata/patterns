@@ -1,0 +1,30 @@
+source: ga_sessions is table('duckdb:data/ga_sample.parquet')
+
+// Accessing fields from within `hits` is fine
+query: ga_sessions -> { 
+    project:
+        clientId
+        hits.dataSource
+    limit: 10
+}
+
+sql: ga_query is {
+    select:
+    """
+    SELECT * FROM
+    (%{
+        ga_sessions -> { project: * }
+    }%)
+    """
+    connection: "duckdb"
+}
+
+source: ga_sessions_2 is from_sql(ga_query)
+
+// This fails with `hits` is not defined
+query: ga_sessions_2 -> {
+    project:
+        clientId
+        hits.dataSource
+    limit: 10
+}
