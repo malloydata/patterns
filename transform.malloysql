@@ -1,5 +1,6 @@
---! connection: duckdb
---! import: "test.malloy"
+>>>malloy
+source: airports is table('duckdb:data/airports.parquet')
+>>>sql connection:duckdb
 
 COPY (
 %{
