@@ -32,7 +32,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query: flights -> {\n  where: carriers.nickname = 'Southwest' and dep_time ? @2002-01 for 5 days\n  group_by: tail_num\n  nest: by_date is {\n    group_by: flight_date is dep_time.day\n    aggregate: flight_count\n    nest: routes_segment_map\n    nest: flights is {\n      group_by: \n        dep_time\n        origin\n        destination\n      order_by: dep_time\n    }\n    order_by: flight_date\n  }\n  limit: 5\n}",
+    "value": "query: flights -> {\n  where: carriers.nickname = 'Southwest' and dep_time ? @2002-01 for 5 days\n  group_by: tail_num\n  nest: by_date is {\n    group_by: flight_date is dep_time.day\n    aggregate: flight_count\n    nest: routes_segment_map\n    nest: flights is {\n      calculate: flight is row_number()\n      group_by: \n        dep_time\n        origin\n        destination\n      order_by: dep_time\n    }\n    order_by: flight_date\n  }\n  limit: 5\n}",
     "metadata": {}
   }
 ]
