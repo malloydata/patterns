@@ -14,7 +14,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query: flights -> {aggregate: flight_count is count()}",
+    "value": "run: flights -> {aggregate: flight_count is count()}",
     "metadata": {}
   }
 ]

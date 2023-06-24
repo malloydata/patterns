@@ -8,7 +8,43 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "source: flights is table('duckdb:data/flights.parquet') {\n  measure: \n    flight_count is count()\n    percent_of_flights is flight_count/all(flight_count) * 100\n\n  join_one: orig is table('duckdb:data/airports.parquet') on origin=orig.code\n  join_one: dest is table('duckdb:data/airports.parquet') on destination=dest.code\n  join_one: carriers is table('duckdb:data/carriers.parquet') on carrier=carriers.code\n\n  query: routes_segment_map is {\n    group_by:\n      orig.latitude\n      orig.longitude\n      latitude2 is dest.latitude\n      longitude2 is dest.longitude\n  }\n}",
+    "value": "source: flights is table('duckdb:data/flights.parquet') {\n  measure: \n    flight_count is count()\n    percent_of_flights is flight_count/all(flight_count) * 100\n\n  join_one: orig is table('duckdb:data/airports.parquet') on origin=orig.code\n  join_one: dest is table('duckdb:data/airports.parquet') on destination=dest.code\n  join_one: carriers is table('duckdb:data/carriers.parquet') on carrier=carriers.code\n\n  query: routes is {\n    group_by:\n      orig.latitude\n      orig.longitude\n      latitude2 is dest.latitude\n      longitude2 is dest.longitude\n  }\n\n  query: by_carrier is {\n    group_by: carriers.nickname\n    aggregate: flight_count\n  }\n\n  query: by_carrier_by_month is {\n    group_by: flight_month is dep_time.month\n    aggregate: flight_count\n    group_by: carriers.nickname\n  }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Routes",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "# segment_map\nrun: flights->routes + {where: origin = 'SJC'}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## By Carrier",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "# bar_chart\nrun: flights->by_carrier",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## By Carrier By Month",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "# line_chart\nrun: flights->by_carrier_by_month + {where: origin = 'SJC'}",
     "metadata": {}
   },
   {
@@ -20,7 +56,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query: flights -> {\n  top: 10\n  group_by: dest.code, dest.full_name\n  aggregate: flight_count\n  nest: by_carrier_bar_chart is {\n    group_by: carriers.nickname\n    aggregate: flight_count\n  }\n  nest: by_carrier_by_month_line_chart is {\n    group_by: flight_month is dep_time.month\n    aggregate: flight_count\n    group_by: carriers.nickname\n  }\n  nest: by_carrier_origin is {\n    group_by: carriers.nickname\n    aggregate: \n      flight_count\n      percent_of_flights\n      avg_distance is distance.avg()\n    nest: routes_segment_map\n    nest: origin_percentage_list_detail is {\n      group_by: orig.city\n      aggregate: percent_of_flights\n    }\n  }\n}\n// --! style dashboard",
+    "value": "# dashboard\nrun: flights -> {\n  top: 5\n  group_by: dest.code, dest.full_name\n  aggregate: flight_count\n  # bar_chart\n  nest: by_carrier\n  # line_chart\n  nest: by_carrier_by_month \n  nest: by_carrier_origin is {\n    group_by: carriers.nickname\n    aggregate: \n      flight_count\n      percent_of_flights\n      avg_distance is distance.avg()\n    # segment_map\n    nest: routes\n    # list_detail\n    nest: origin_percentage is {\n      group_by: orig.city\n      aggregate: percent_of_flights\n    }\n  }\n}",
     "metadata": {}
   },
   {
@@ -32,7 +68,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query: flights -> {\n  where: carriers.nickname = 'Southwest' and dep_time ? @2002-01 for 5 days\n  group_by: tail_num\n  nest: by_date is {\n    group_by: flight_date is dep_time.day\n    aggregate: flight_count\n    nest: routes_segment_map\n    nest: flights is {\n      calculate: flight is row_number()\n      group_by: \n        dep_time\n        origin\n        destination\n      order_by: dep_time\n    }\n    order_by: flight_date\n  }\n  limit: 5\n}",
+    "value": "run: flights -> {\n  where: carriers.nickname = 'Southwest' and dep_time ? @2002-01 for 5 days\n  group_by: tail_num\n  nest: by_date is {\n    group_by: flight_date is dep_time.day\n    aggregate: flight_count\n    # segment_map\n    nest: routes\n    nest: flights is {\n      calculate: flight is row_number()\n      group_by: \n        dep_time\n        origin\n        destination\n      order_by: dep_time\n    }\n    order_by: flight_date\n  }\n  limit: 5\n}",
     "metadata": {}
   }
 ]

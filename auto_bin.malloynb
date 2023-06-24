@@ -8,7 +8,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "source: airports is table('duckdb:data/airports.parquet') + {\n  measure: \n    airport_count is count()\n  query: by_elevation is {\n    aggregate: bin_size is (max(elevation) - min(elevation))/30\n    nest: data is {\n      group_by: elevation\n      aggregate: row_count is count()\n    }\n  }\n  -> {\n    group_by: elevation is floor(data.elevation/bin_size)*bin_size + bin_size/2\n    aggregate: airport_count is data.row_count.sum()\n    order_by: elevation\n  }\n}",
+    "value": "source: airports is table('duckdb:data/airports.parquet') + {\n  measure: \n    airport_count is count()\n  # bar_chart\n  query: by_elevation is {\n    aggregate: bin_size is (max(elevation) - min(elevation))/30\n    nest: data is {\n      group_by: elevation\n      aggregate: row_count is count()\n    }\n  }\n  -> {\n    group_by: elevation is \n      floor(data.elevation/bin_size)*nullif(bin_size,0) + bin_size/2\n    aggregate: airport_count is data.row_count.sum()\n    order_by: elevation\n  }\n}",
     "metadata": {}
   },
   {
@@ -20,7 +20,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query: airports -> by_elevation\n// --! style bar_chart",
+    "value": "run: airports -> by_elevation",
     "metadata": {}
   },
   {
@@ -32,7 +32,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query: airports  {? state='FL'} -> by_elevation\n// --! style bar_chart",
+    "value": "query: airports  {? state='FL'} -> by_elevation\n",
     "metadata": {}
   },
   {
@@ -44,7 +44,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query: airports -> {\n  group_by: state is state\n  aggregate: airport_count\n  nest: by_elevation_bar_chart is by_elevation\n}",
+    "value": "run: airports -> {\n  group_by: state is state\n  aggregate: airport_count\n  nest: by_elevation\n}",
     "metadata": {}
   }
 ]
