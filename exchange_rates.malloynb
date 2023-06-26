@@ -20,7 +20,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query: exchange_rates -> {\n  group_by: data.country_currency_desc\n  nest: by_date_line_chart is {\n    group_by: \n      data.record_date\n      rate is data.exchange_rate::number\n  }\n}",
+    "value": "query: exchange_rates -> {\n  group_by: data.country_currency_desc\n  # line_chart\n  nest: by_date is {\n    group_by: \n      data.record_date\n      rate is data.exchange_rate::number\n  }\n}",
     "metadata": {}
   }
 ]

@@ -1,0 +1,51 @@
+source: flights is table('duckdb:../data/flights.parquet') {
+  join_one: carriers is table('duckdb:../data/carriers.parquet') 
+    on carrier=carriers.code
+  join_one: aircraft is table('duckdb:data/aircraft.parquet') {
+    join_one: aircraft_models is table('duckdb:data/aircraft_models.parquet') 
+        on aircraft_model_code = aircraft_models.aircraft_model_code
+  } on tail_num = aircraft.tail_num
+
+  measure: 
+    flight_count is count()
+    percent_of_flights is flight_count/all(flight_count) * 100
+    carrier_count is carriers.count()
+    aircraft_count is aircraft.count()
+    average_plane_size_in_seats is aircraft.aircraft_models.seats.avg()
+
+  query: all_routes is {
+    group_by:
+      origin
+      destination
+    aggregate:
+      flight_count
+      carrier_count
+      average_plane_size_in_seats
+      aircraft_count
+      first_flight is min(dep_time)
+      last_flight is max(dep_time)
+    nest: carriers is {
+      group_by: carrier
+      aggregate: percent_of_flights
+    }
+  }
+
+  query: by_carrier is {
+    group_by: carriers.nickname
+    aggregate: flight_count
+    nest: destinations is {
+      limit: 10
+      group_by: destination
+      aggregate: 
+        flight_count
+        percent_of_flights
+      nest: origins is {
+        group_by: origin
+        aggregate:
+          flight_count
+          percent_of_flights
+          limit: 3
+      }
+    }
+  }
+}

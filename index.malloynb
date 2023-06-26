@@ -8,7 +8,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query:  table('duckdb:data/airports.parquet') -> {\n  index: *\n} -> {\n  project: *\n  where: fieldType = 'string' and fieldValue != null\n  order_by: weight desc\n}",
+    "value": "run:  table('duckdb:data/airports.parquet') -> {\n  index: *\n} -> {\n  project: *\n  where: fieldType = 'string' and fieldValue != null\n  order_by: weight desc\n}",
     "metadata": {}
   },
   {
@@ -20,7 +20,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query:  table('duckdb:data/airports.parquet') -> {\n  index: *\n} -> {\n  where: fieldValue ~ r'SANTA'\n  project: *\n  order_by: weight desc\n  limit: 15\n}",
+    "value": "run:  table('duckdb:data/airports.parquet') -> {\n  index: *\n} -> {\n  where: fieldValue ~ r'SANTA'\n  project: *\n  order_by: weight desc\n  limit: 15\n}",
     "metadata": {}
   },
   {
@@ -32,7 +32,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query:  table('duckdb:data/airports.parquet') -> {\n  where: county ~ 'SANTA CRUZ'\n  project: *\n}",
+    "value": "run:  table('duckdb:data/airports.parquet') -> {\n  where: county ~ 'SANTA CRUZ'\n  project: *\n}",
     "metadata": {}
   },
   {
@@ -44,7 +44,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "query:  table('duckdb:data/airports.parquet') -> {\n  index: *\n} -> {\n  group_by: fieldName\n  nest: values is {\n    group_by: fieldValue, weight\n    order_by: weight desc\n    limit: 10\n  }\n  order_by: fieldName\n}",
+    "value": "run:  table('duckdb:data/airports.parquet') -> {\n  index: *\n} -> {\n  group_by: fieldName\n  nest: values is {\n    group_by: fieldValue, weight\n    order_by: weight desc\n    limit: 10\n  }\n  order_by: fieldName\n}",
     "metadata": {}
   },
   {
@@ -56,7 +56,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "source: aircraft_models is table('duckdb:data/aircraft_models.parquet') + {\n  measure: total_seats is seats.sum()\n\n  query: search_index is {\n    index: * by total_seats\n  } -> {\n    project: *\n    order_by: weight desc\n  }\n\n}\nquery:  aircraft_models -> search_index ",
+    "value": "source: aircraft_models is table('duckdb:data/aircraft_models.parquet') + {\n  measure: total_seats is seats.sum()\n\n  query: search_index is {\n    index: * by total_seats\n  } -> {\n    project: *\n    order_by: weight desc\n  }\n\n}\nrun:  aircraft_models -> search_index ",
     "metadata": {}
   },
   {
@@ -68,7 +68,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "source: flights is table('duckdb:data/flights.parquet') {\n  join_one: carriers is table('duckdb:data/carriers.parquet') on carrier = carriers.code\n  join_one: dest is table('duckdb:data/airports.parquet') on destination = dest.code\n  join_one: orig is table('duckdb:data/airports.parquet') on origin = orig.code\n\n  query: search_index is {\n    index: *, dest.*, orig.* carriers.*\n    sample: 5000\n  }\n}\n\n// use the search index to look up values for 'SAN'\nquery: flights-> search_index -> {\n  where: fieldValue ~ r'SAN'\n  project: *\n  order_by: weight desc\n}\n",
+    "value": "source: flights is table('duckdb:data/flights.parquet') {\n  join_one: carriers is table('duckdb:data/carriers.parquet') on carrier = carriers.code\n  join_one: dest is table('duckdb:data/airports.parquet') on destination = dest.code\n  join_one: orig is table('duckdb:data/airports.parquet') on origin = orig.code\n\n  query: search_index is {\n    index: *, dest.*, orig.* carriers.*\n    sample: 5000\n  }\n}\n\n// use the search index to look up values for 'SAN'\nrun: flights-> search_index -> {\n  where: fieldValue ~ r'SAN'\n  project: *\n  order_by: weight desc\n}\n",
     "metadata": {}
   }
 ]
