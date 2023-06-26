@@ -1,0 +1,11 @@
+>>>malloy
+import "flights.malloy"
+
+>>>sql connection:duckdb
+
+COPY %{flights->all_routes}% TO 'output/all_routes.csv' (HEADER)
+
+>>>sql 
+
+COPY %{flights->by_carrier}% TO 'output/flights_by_carrier.json'
+
