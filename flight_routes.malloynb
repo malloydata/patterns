@@ -8,19 +8,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "source: flights is table('duckdb:data/flights.parquet') {\n  measure: \n    flight_count is count()\n    percent_of_flights is flight_count/all(flight_count) * 100\n\n  join_one: orig is table('duckdb:data/airports.parquet') on origin=orig.code\n  join_one: dest is table('duckdb:data/airports.parquet') on destination=dest.code\n  join_one: carriers is table('duckdb:data/carriers.parquet') on carrier=carriers.code\n\n  query: routes is {\n    group_by:\n      orig.latitude\n      orig.longitude\n      latitude2 is dest.latitude\n      longitude2 is dest.longitude\n  }\n\n  query: by_carrier is {\n    group_by: carriers.nickname\n    aggregate: flight_count\n  }\n\n  query: by_carrier_by_month is {\n    group_by: flight_month is dep_time.month\n    aggregate: flight_count\n    group_by: carriers.nickname\n  }\n}",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## Routes",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "# segment_map\nrun: flights->routes + {where: origin = 'SJC'}",
+    "value": "source: flights is table('duckdb:data/flights.parquet') {\n  measure: \n    flight_count is count()\n    percent_of_flights is flight_count/all(flight_count) * 100\n\n  join_one: orig is table('duckdb:data/airports.parquet') on origin=orig.code\n  join_one: dest is table('duckdb:data/airports.parquet') on destination=dest.code\n  join_one: carriers is table('duckdb:data/carriers.parquet') on carrier=carriers.code\n\n\n  query: by_carrier is {\n    group_by: carriers.nickname\n    aggregate: flight_count\n  }\n\n  query: by_carrier_by_month is {\n    group_by: flight_month is dep_time.month\n    aggregate: flight_count\n    group_by: carriers.nickname\n  }\n\n  query: routes is {\n    group_by:\n      orig.latitude\n      orig.longitude\n      latitude2 is dest.latitude\n      longitude2 is dest.longitude\n  }\n}",
     "metadata": {}
   },
   {
@@ -50,13 +38,25 @@
   {
     "kind": 1,
     "language": "markdown",
+    "value": "## Routes",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "# segment_map\nrun: flights->routes + {where: origin = 'SJC'}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
     "value": "## Flight Routes By Carrier\nLook at the top 10 destinations.  Show which carriers fly there and where the flights oroginate from.  ",
     "metadata": {}
   },
   {
     "kind": 2,
     "language": "malloy",
-    "value": "# dashboard\nrun: flights -> {\n  top: 5\n  group_by: dest.code, dest.full_name\n  aggregate: flight_count\n  # bar_chart\n  nest: by_carrier\n  # line_chart\n  nest: by_carrier_by_month \n  nest: by_carrier_origin is {\n    group_by: carriers.nickname\n    aggregate: \n      flight_count\n      percent_of_flights\n      avg_distance is distance.avg()\n    # segment_map\n    nest: routes\n    # list_detail\n    nest: origin_percentage is {\n      group_by: orig.city\n      aggregate: percent_of_flights\n    }\n  }\n}",
+    "value": "# dashboard\nrun: flights -> {\n  top: 5\n  group_by: \n    orig.code\n    `Origin Airport Name` is orig.full_name\n  aggregate: flight_count\n  # bar_chart\n  nest: `Carriers` is by_carrier\n  # line_chart\n  nest: `Carriers over Time` is by_carrier_by_month \n  nest: `Carriers from this Origin` is {\n    group_by: `Carrier` is carriers.nickname\n    aggregate: \n      flight_count\n      percent_of_flights\n      avg_distance is distance.avg()\n    # segment_map\n    nest: `Destinations` is routes\n    # list_detail\n    nest: `Destinations and Percentage` is {\n      group_by: `Destination City` is dest.city\n      aggregate: percent_of_flights\n    }\n  }\n}",
     "metadata": {}
   },
   {
