@@ -1,0 +1,55 @@
+source: flights_table is table('duckdb:data/flights.parquet') {
+
+  query: inner is {
+    aggregate: 
+        jfk_flights is count() { where: destination='JFK'  }
+        lax_flights is count() { where: destination='LAX' }
+    group_by: tail_num
+  }
+  
+  query: scott_solution_1 is inner -> {
+    aggregate: 
+        plane_count is count() 
+        planes_who_fly_to_jfk is count() { where: jfk_flights>0}
+        states_who_fly_to_lax is count() { where: lax_flights>0}
+        states_who_fly_to_both is count() { where: jfk_flights>0 and lax_flights>0}
+    }
+
+  query: stats is {
+    group_by: tail_num
+    # list
+    nest: d1 is {
+      group_by: destination
+    }
+    # list
+    nest: d2 is {
+      group_by: destination
+    }
+  }
+  -> {
+    declare:
+      plane_count is count(distinct tail_num)
+      jfk_count is plane_count {
+        where: d1.destination='JFK'
+      }
+      jfk_and_lax_count is plane_count {
+        where: 
+          d1.destination='JFK'
+          and d2.destination='LAX'
+      }
+      jfk_and_not_lax_count is jfk_count - jfk_and_lax_count
+
+    aggregate: 
+      plane_count
+      jfk_count
+      jfk_and_lax_count
+      jfk_and_not_lax_count
+  }
+
+  // query: by_month is {
+  //   group_by: dep_month is dep_time.month
+  //   nest: stats
+
+  // }
+
+}
