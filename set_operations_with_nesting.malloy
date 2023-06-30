@@ -1,6 +1,7 @@
 source: flights_table is table('duckdb:data/flights.parquet')
 
 query: plane_destinations is flights_table -> {
+  group_by: dep_month is dep_time.month
   group_by: tail_num
   # list
   nest: d1 is {
@@ -10,13 +11,16 @@ query: plane_destinations is flights_table -> {
   nest: d2 is {
     group_by: destination
   }
+  limit: 30000
 } 
 
-
+run: flights_table -> { 
+  aggregate: plane_count is count(distinct tail_num)
+}
 
 source: planes is from(->plane_destinations) + {
   measure:
-    plane_count is count()
+    plane_count is count(distinct tail_num)
     jfk_count is plane_count {
       where: d1.destination='JFK'
     }
@@ -33,6 +37,14 @@ source: planes is from(->plane_destinations) + {
       jfk_count
       jfk_and_lax_count
       jfk_and_not_lax_count
+    nest: by_month is {
+      group_by: dep_month 
+        aggregate: 
+        plane_count
+        jfk_count
+        jfk_and_lax_count
+        jfk_and_not_lax_count
+    }
   }
 
   query: flew_to_jfk is {
