@@ -14,7 +14,7 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "run: flights -> {\n  declare: \n    before is flight_count {where: dep_time.year = @2001}\n    after is flight_count {where: dep_time.year = @2002}\n  group_by: carrier\n  # percent\n  aggregate: delta is (after-before)/before\n    before\n    after\n}",
+    "value": "run: flights -> {\n  declare: \n    before is flight_count {where: dep_time.year = @2001}\n    after is flight_count {where: dep_time.year = @2002}\n  group_by: carrier\n  aggregate: \n    # percent\n    delta is (after-before)/before\n    before\n    after\n}",
     "metadata": {}
   }
 ]
