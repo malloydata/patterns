@@ -5,6 +5,21 @@ To run these examples
 * press `.`  (the period key) to run vscode
 * Install the Malloy Extension when prompted (or manually)
 
+## Tables and Charts with 'OTHER'
+Often you want to limit the results to the top reusults.  This example shows how to bucket everything else into an 'OTHER' bucket
+
+[Other Buckets](other.malloynb)
+
+## A Simple Growth Calculation
+Growth is this period minus last period divided by last period.  Here is how you do it simply in Malloy
+
+[Compute Growth](growth.malloynb)
+
+## Row Totals in Malloy
+Malloy currently doesn't support rendering tables with totals, but you can simple compute them.
+
+[Row Totals](totals.malloynb)
+
 ## Working with Nested Data
 Malloy natively understands how to work with tables that have nested structs 
 and arrays (including raw JSON) and makes easy to query and transform. 
