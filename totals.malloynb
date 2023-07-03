@@ -2,31 +2,49 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "# Totals",
+    "value": "# Totals\nWhen rendering you often want to get results data for a result row.",
     "metadata": {}
   },
   {
     "kind": 2,
     "language": "malloy",
-    "value": "source: airports is table('duckdb:data/airports.parquet') + {\n  measure: \n    airport_count is count()\n    avg_elevation is elevation.avg()\n\n  query: measures is {\n    aggregate:\n      airport_count\n      avg_elevation\n  }\n\n  query: top_states_by_elevation is {\n    group_by: state\n    aggregate: avg_elevation\n    calculate: row_num is row_number()\n    nest: data is {  \n      group_by: code, elevation\n    }\n}\n-> {\n  group_by: state is \n    pick state when row_num < 10\n    else 'other'\n  aggregate: avg_elevation is data.elevation.avg()\n}\n}",
+    "value": "source: airports is table('duckdb:data/airports.parquet') + {\n  measure: \n    airport_count is count()\n    avg_elevation is elevation.avg()\n\n  query: measures is {\n    aggregate:\n      airport_count\n      avg_elevation\n  }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Basic Table",
     "metadata": {}
   },
   {
     "kind": 2,
     "language": "malloy",
-    "value": "run: airports -> measures + {\n  nest: measures + {\n    group_by: state\n  }\n}",
+    "value": "run: airports -> {\n  aggregate: \n    airport_count \n    avg_elevation\n  nest: data_table is {\n    group_by: state\n    aggregate:\n      airport_count\n      avg_elevation\n    limit: 10\n  }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Using Refinements",
     "metadata": {}
   },
   {
     "kind": 2,
     "language": "malloy",
-    "value": "run: airports -> {\n    group_by: state\n    aggregate: avg_elevation\n    calculate: row_num is row_number()\n    nest: data is {  \n      group_by: code, elevation\n    }\n}\n-> {\n  group_by: state is \n    pick state when row_num < 10\n    else 'other'\n  aggregate: avg_elevation is data.elevation.avg()\n}",
+    "value": "run: airports -> measures + {\n  group_by: state\n  limit: 10\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Table with Totals",
     "metadata": {}
   },
   {
     "kind": 2,
     "language": "malloy",
-    "value": "run: airports -> {\n  group_by: fac_type\n  nest: top_states_by_elevation\n}",
+    "value": "# totals\nrun: airports -> measures + {\n  nest: data_table is measures + {\n    group_by: state\n    limit: 10\n  }\n}",
     "metadata": {}
   }
 ]

@@ -1,0 +1,20 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Simple Growth Calculation\nHow to Comupte growth as a column",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "source: flights is table('duckdb:data/flights.parquet') + {\n  measure:\n    flight_count is count()\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "run: flights -> {\n  declare: \n    before is flight_count {where: dep_time.year = @2001}\n    after is flight_count {where: dep_time.year = @2002}\n  group_by: carrier\n  # percent\n  aggregate: delta is (after-before)/before\n    before\n    after\n}",
+    "metadata": {}
+  }
+]
