@@ -1,0 +1,62 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Level of Detail (ungrouped aggregates)\nMalloy provides the functions `all()` and `exclude()` to escape grouping in aggregate calculations.  These functions are different than window functions as they operate inline with the query and can produce correct results even when the data hits a `limit` or is fanned out.  Use cases below.\n\n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "source: flights is table('duckdb:data/flights.parquet') {\n  join_one: carriers is table('duckdb:data/carriers.parquet') on carrier=carriers.code\n  measure: flight_count is count()\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Totals\nYou can easily product a cloumn total that includes all the data, not just the data in the table.  Southwest + USAir = 126,434 flights.  Notice that `all_flights` is the total, of all the flight, not just the ones in the table",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "run: flights -> {\n  group_by: carriers.nickname\n  aggregate: \n    flight_count\n    all_flights is all(flight_count)\n    limit: 2\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Percent of Total\nThe `all()` function is really useful in percent of total calculations.  The `# percent` tags the result so it is displayed as a percentage.",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "\nrun: flights -> {\n  group_by: carriers.nickname\n  aggregate: \n    flight_count\n    # percent\n    percent_of_flights is flight_count/all(flight_count)\n    limit: 2\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## All of a particular grouping\nThe `all()` function can optionally take the names of output columns to show all of a particular value.  You can see that all of Southwests fights is still 88,751.  The output column name for `carriers.nickname` is `nickname` so we use that in the calculation.  The `exclude()` function lets you eliminate a dimension from grouping.",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "run: flights -> {\n  group_by:\n    carriers.nickname\n    destination\n    origin\n  aggregate: \n    flight_count\n    flights_by_this_carrier is all(flight_count, nickname)\n    flights_to_this_destination is all(flight_count, destination)\n    flights_by_this_origin is all(flight_count, origin)\n    flights_on_this_route is exclude(flight_count, nickname)\n  limit: 20\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "##  As Percentages\nDisplaying results as percentages is often gives clues as to how numbers relate.  Is this number a large or small percentage of the group?  Level of detail calculations are great for this.  In Malloy, identifiers enclosed in back-ticks can have spaces.",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "run: flights -> {\n  group_by:\n    carriers.nickname\n    destination\n    origin\n  aggregate: \n    flight_count\n    # percent\n    `carrier as a percent of all flights` is all(flight_count, nickname)/all(flight_count)\n    # percent\n    `destination as a percent of all flights` is all(flight_count, destination)/all(flight_count)\n    # percent\n    `origin as a percent of all flights` is all(flight_count, origin)/all(flight_count)\n    # percent\n    `carriers as a percentage of route` is flight_count/exclude(flight_count, nickname)\n}",
+    "metadata": {}
+  }
+]
