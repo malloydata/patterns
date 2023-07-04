@@ -2,7 +2,19 @@
   {
     "kind": 2,
     "language": "malloy",
-    "value": "source: carriers is table('duckdb:data/carriers.parquet') \nsource: airports is table('duckdb:data/airports.parquet')\nsource: flights is table('duckdb:data/flights.parquet') ",
+    "value": "source: carriers is table('duckdb:data/carriers.parquet') \nsource: airports is table('duckdb:data/airports.parquet')\nsource: flights is table('duckdb:data/flights.parquet') {\n  measure: flight_count is count()\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "\nrun: flights -> {\n  group_by: carrier\n  aggregate: flight_count\n  nest: by_destination is {\n    group_by: destination \n    aggregate: flight_count\n      # percent\n      percent_of_flights is flight_count/all(flight_count)\n\n    limit: 4\n  }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "malloy",
+    "value": "",
     "metadata": {}
   }
 ]

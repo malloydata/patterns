@@ -20,6 +20,11 @@ Malloy currently doesn't support rendering tables with totals, but you can simpl
 
 [Row Totals](totals.malloynb)
 
+## Level of Detail Calculations (ungrouped aggregates)
+Malloy has the ability to escape grouping in a query.  This is very useful for percent_of_total calculations among other things.
+
+[Level of Detail Calculations](level_of_detail.malloynb)
+
 ## Working with Nested Data
 Malloy natively understands how to work with tables that have nested structs 
 and arrays (including raw JSON) and makes easy to query and transform. 
