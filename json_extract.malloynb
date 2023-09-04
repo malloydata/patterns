@@ -1,0 +1,19 @@
+>>>markdown
+## JSon Extract
+>>>malloy
+source: test is duckdb.sql("""
+  SELECT 1 as id, '{"name":"lloyd", "title":"cheese maker"}'::json as payload
+  UNION SELECT 2, '{"name":"carlin", "title":"cheese packaging"}'::json
+""") extend {
+  dimension: 
+    name is json_extract_string!(payload::string, "$.name")
+    title is json_extract_string!(payload::string, "$.title")
+
+}
+>>>malloy
+run: test -> {
+  project: 
+    id
+    name
+    title
+}
