@@ -1,14 +1,15 @@
 >>>markdown
-## JSon Extract
+## JSON Extract
+Modeling using simple JSON types.  Model dimensions using `json_extract` to grab data from JSON object for use in data models.  You must provide a `!` in the function name as the function is not part of the standard Malloy library.
 >>>malloy
 source: test is duckdb.sql("""
-  SELECT 1 as id, '{"name":"lloyd", "title":"cheese maker"}'::json as payload
-  UNION SELECT 2, '{"name":"carlin", "title":"cheese packaging"}'::json
+  SELECT 1 as id, '{"name":"lloyd", "title":"cheese maker", "hair_percent": 80 }'::json as payload
+  UNION SELECT 2, '{"name":"carlin", "title":"cheese packaging", "hair_percent": 100}'::json
 """) extend {
   dimension: 
     name is json_extract_string!(payload::string, "$.name")
     title is json_extract_string!(payload::string, "$.title")
-
+    hair_percent is json_extract!(payload::string, "$.hair_percent")::number
 }
 >>>malloy
 run: test -> {
@@ -16,4 +17,5 @@ run: test -> {
     id
     name
     title
+    hair_percent
 }
