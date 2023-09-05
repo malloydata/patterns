@@ -1,0 +1,22 @@
+>>>markdown
+## JSON Extract Postgres
+Modeling using simple JSON types.  Model dimensions using `json_extract` to grab data from JSON object for use in data models.  You must provide a `!` in the function name as the function is not part of the standard Malloy library.
+>>>malloy
+source: test is postgres.sql("""
+  SELECT 1 as id, jsonb_build_object('name','lloyd','title','cheese maker','hair_percent', 80) as payload
+  UNION SELECT 2 as id, jsonb_build_object('name','carlin','title','cheese packaging','hair_percent', 100) as payload
+""") 
+extend {
+  dimension: 
+    name is jsonb_extract_path_text!(payload, "name")::string
+    title is jsonb_extract_path_text!(payload, "title")::string
+    hair_percent is jsonb_extract_path!(payload, "hair_percent")::number
+}
+>>>malloy
+run: test -> {
+  project: 
+    id
+    name
+    title
+    hair_percent
+}
