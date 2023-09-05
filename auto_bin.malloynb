@@ -1,50 +1,47 @@
-[
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "# Automatically Binning Data\nBy examining the range of values over a dataset we can compute the appropriate bin size. While capturing the data at the same time.  We can then piple the output to another query that produces the data so it can easily be displayed in a histogram.  \n\n",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "source: airports is table('duckdb:data/airports.parquet') + {\n  measure: \n    airport_count is count()\n  # bar_chart\n  query: by_elevation is {\n    aggregate: bin_size is (max(elevation) - min(elevation))/30\n    nest: data is {\n      group_by: elevation\n      aggregate: row_count is count()\n    }\n  }\n  -> {\n    group_by: elevation is \n      floor(data.elevation/bin_size)*nullif(bin_size,0) + bin_size/2\n    aggregate: airport_count is data.row_count.sum()\n    order_by: elevation\n  }\n}",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## Over all elevation distribution\n\nThe query can be used to show the overall distribution of the data.\n\nWe are showing the bin_size in this exmaple for clarity.",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "run: airports -> by_elevation",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "# Distribution Adapts Automatically\nNotice that when we look at Florida, notice that the binning is different.",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "query: airports  {? state='FL'} -> by_elevation\n",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## Elevation within states.\nThe Binning even adapts when the queries are nested.\n\nNotice that all the binning is local to the individual states.  For example the bottom bin in Colorado starts at an elevation of 3000ish feet.",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "run: airports -> {\n  group_by: state is state\n  aggregate: airport_count\n  nest: by_elevation\n}",
-    "metadata": {}
+>>>markdown
+# Automatically Binning Data
+By examining the range of values over a dataset we can compute the appropriate bin size. While capturing the data at the same time.  We can then piple the output to another query that produces the data so it can easily be displayed in a histogram.  
+
+>>>malloy
+source: airports is table('duckdb:data/airports.parquet') + {
+  measure: 
+    airport_count is count()
+  # bar_chart
+  query: by_elevation is {
+    aggregate: bin_size is (max(elevation) - min(elevation))/30
+    nest: data is {
+      group_by: elevation
+      aggregate: row_count is count()
+    }
   }
-]
+  -> {
+    group_by: elevation is 
+      floor(data.elevation/bin_size)*nullif(bin_size,0) + bin_size/2
+    aggregate: airport_count is data.row_count.sum()
+    order_by: elevation
+  }
+}
+>>>markdown
+## Over all elevation distribution
+
+The query can be used to show the overall distribution of the data.
+
+We are showing the bin_size in this exmaple for clarity.
+>>>malloy
+run: airports -> by_elevation
+>>>markdown
+# Distribution Adapts Automatically
+Notice that when we look at Florida, notice that the binning is different.
+>>>malloy
+query: airports  {? state='FL'} -> by_elevation
+>>>markdown
+## Elevation within states.
+The Binning even adapts when the queries are nested.
+
+Notice that all the binning is local to the individual states.  For example the bottom bin in Colorado starts at an elevation of 3000ish feet.
+>>>malloy
+run: airports -> {
+  group_by: state is state
+  aggregate: airport_count
+  nest: by_elevation
+}

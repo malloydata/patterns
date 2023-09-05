@@ -1,74 +1,96 @@
-[
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "# Malloy Dimensional Indexes\nMalloy has a special query operator that builds dimensional search indexes for sources.  Search indexes are generally used by Malloy Composer (Malloy's BI interface), but can also be used for other things.\n\nWhen filtering data, you might know a term, but not necessarily which column in the one of the join data contains it.  Indexing the data on field names and high cardinality fields let's you qucikly find the term and the associated value.\n\nThough I haven't played with it.  Indexing could be used by LLMs to find the interesting column/term mapping in the data set.\n\n## Simple Example\nWe're going to take the airports table and index it.  Some things to notice.\n\n* The query operator `index:` takes a list of dimensions we would like in our index.  \n* The results of an index are unordered, so we pass the result to another stage to order the results.  \n* In this case, `weight` is the row count of the results returned.  \n* non-string -type fields are represented as ranges across all rows.\n* Click `ShowSQL` to see how this query works in SQL.",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "run:  table('duckdb:data/airports.parquet') -> {\n  index: *\n} -> {\n  project: *\n  where: fieldType = 'string' and fieldValue != null\n  order_by: weight desc\n}",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## Index For filtering queries\n\nIndexes can be used find the best way to filter a dataset.  For example supposed we'd like to find 'SANTA CRUZ' in the dataset, but we don't quite know how to filter for it.  In a UI you might imagine that you type 'SANTA' and let have suggestons for values that might be appropriate.  In the top results we can see that 'SANTA CRUZ' is both a `city` and a `county`..",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "run:  table('duckdb:data/airports.parquet') -> {\n  index: *\n} -> {\n  where: fieldValue ~ r'SANTA'\n  project: *\n  order_by: weight desc\n  limit: 15\n}",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "We can then write a simple query to show the rows.  It turns out that 'SANTA CRUZ' is a county in both California and Arizona.",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "run:  table('duckdb:data/airports.parquet') -> {\n  where: county ~ 'SANTA CRUZ'\n  project: *\n}",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## Indexing to show top values\nIt is often difficult to approach a new dataset.  The index operator provides an intersting way to quickly gain an understanding of the dataset.  By piping the results of an index another stage, we can quickly see all the interesting values for each of the interesting dimesions.  Again, the weight shows the number of rows for that particular dimension/value.",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "run:  table('duckdb:data/airports.parquet') -> {\n  index: *\n} -> {\n  group_by: fieldName\n  nest: values is {\n    group_by: fieldValue, weight\n    order_by: weight desc\n    limit: 10\n  }\n  order_by: fieldName\n}",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## Weights can be any measure\nSuppose we are looking at the Aircraft Models table and we'd like to produce an index.  In our world, big planes so we are going to weight the values for bigger planes higher.  The query name `search_index` is special.  Composer looks for a query named `search_index` to use to suggest search terms.\n",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "source: aircraft_models is table('duckdb:data/aircraft_models.parquet') + {\n  measure: total_seats is seats.sum()\n\n  query: search_index is {\n    index: * by total_seats\n  } -> {\n    project: *\n    order_by: weight desc\n  }\n\n}\nrun:  aircraft_models -> search_index ",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## Index the entire graph\nIndexing can work across an entire network of joins.  In this case we are going to join flights and airports and carriers.  To speed things up we are going to only sample 5000 rows.",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "source: flights is table('duckdb:data/flights.parquet') {\n  join_one: carriers is table('duckdb:data/carriers.parquet') on carrier = carriers.code\n  join_one: dest is table('duckdb:data/airports.parquet') on destination = dest.code\n  join_one: orig is table('duckdb:data/airports.parquet') on origin = orig.code\n\n  query: search_index is {\n    index: *, dest.*, orig.* carriers.*\n    sample: 5000\n  }\n}\n\n// use the search index to look up values for 'SAN'\nrun: flights-> search_index -> {\n  where: fieldValue ~ r'SAN'\n  project: *\n  order_by: weight desc\n}\n",
-    "metadata": {}
+>>>markdown
+# Malloy Dimensional Indexes
+Malloy has a special query operator that builds dimensional search indexes for sources.  Search indexes are generally used by Malloy Composer (Malloy's BI interface), but can also be used for other things.
+
+When filtering data, you might know a term, but not necessarily which column in the one of the join data contains it.  Indexing the data on field names and high cardinality fields let's you qucikly find the term and the associated value.
+
+Though I haven't played with it.  Indexing could be used by LLMs to find the interesting column/term mapping in the data set.
+
+## Simple Example
+We're going to take the airports table and index it.  Some things to notice.
+
+* The query operator `index:` takes a list of dimensions we would like in our index.  
+* The results of an index are unordered, so we pass the result to another stage to order the results.  
+* In this case, `weight` is the row count of the results returned.  
+* non-string -type fields are represented as ranges across all rows.
+* Click `ShowSQL` to see how this query works in SQL.
+>>>malloy
+run:  table('duckdb:data/airports.parquet') -> {
+  index: *
+} -> {
+  project: *
+  where: fieldType = 'string' and fieldValue != null
+  order_by: weight desc
+}
+>>>markdown
+## Index For filtering queries
+
+Indexes can be used find the best way to filter a dataset.  For example supposed we'd like to find 'SANTA CRUZ' in the dataset, but we don't quite know how to filter for it.  In a UI you might imagine that you type 'SANTA' and let have suggestons for values that might be appropriate.  In the top results we can see that 'SANTA CRUZ' is both a `city` and a `county`..
+>>>malloy
+run:  table('duckdb:data/airports.parquet') -> {
+  index: *
+} -> {
+  where: fieldValue ~ r'SANTA'
+  project: *
+  order_by: weight desc
+  limit: 15
+}
+>>>markdown
+We can then write a simple query to show the rows.  It turns out that 'SANTA CRUZ' is a county in both California and Arizona.
+>>>malloy
+run:  table('duckdb:data/airports.parquet') -> {
+  where: county ~ 'SANTA CRUZ'
+  project: *
+}
+>>>markdown
+## Indexing to show top values
+It is often difficult to approach a new dataset.  The index operator provides an intersting way to quickly gain an understanding of the dataset.  By piping the results of an index another stage, we can quickly see all the interesting values for each of the interesting dimesions.  Again, the weight shows the number of rows for that particular dimension/value.
+>>>malloy
+run:  table('duckdb:data/airports.parquet') -> {
+  index: *
+} -> {
+  group_by: fieldName
+  nest: values is {
+    group_by: fieldValue, weight
+    order_by: weight desc
+    limit: 10
   }
-]
+  order_by: fieldName
+}
+>>>markdown
+## Weights can be any measure
+Suppose we are looking at the Aircraft Models table and we'd like to produce an index.  In our world, big planes so we are going to weight the values for bigger planes higher.  The query name `search_index` is special.  Composer looks for a query named `search_index` to use to suggest search terms.
+>>>malloy
+source: aircraft_models is table('duckdb:data/aircraft_models.parquet') + {
+  measure: total_seats is seats.sum()
+
+  query: search_index is {
+    index: * by total_seats
+  } -> {
+    project: *
+    order_by: weight desc
+  }
+
+}
+run:  aircraft_models -> search_index 
+>>>markdown
+## Index the entire graph
+Indexing can work across an entire network of joins.  In this case we are going to join flights and airports and carriers.  To speed things up we are going to only sample 5000 rows.
+>>>malloy
+source: flights is table('duckdb:data/flights.parquet') {
+  join_one: carriers is table('duckdb:data/carriers.parquet') on carrier = carriers.code
+  join_one: dest is table('duckdb:data/airports.parquet') on destination = dest.code
+  join_one: orig is table('duckdb:data/airports.parquet') on origin = orig.code
+
+  query: search_index is {
+    index: *, dest.*, orig.* carriers.*
+    sample: 5000
+  }
+}
+
+// use the search index to look up values for 'SAN'
+run: flights-> search_index -> {
+  where: fieldValue ~ r'SAN'
+  project: *
+  order_by: weight desc
+}

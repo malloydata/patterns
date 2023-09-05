@@ -1,20 +1,26 @@
-[
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "# Hack to Order a Pick.",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "source: airports is table('duckdb:data/airports.parquet') + {\n  measure: \n    airport_count is count()\n  \n  query: by_elevation is {\n    group_by: elevation is \n      pick '1 Low' when elevation < 100\n      pick '2 Medium' when elevation < 1000\n      else '3 High'\n    aggregate: airport_count\n  }\n  -> {\n    project:\n      e is substr(elevation, 2)\n      airport_count\n      order is substr(elevation,1,1)  // should be able to order by this...\n    order_by: order\n  }\n  -> {project: e, airport_count}\n}\n",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "# bar_chart\nrun: airports -> by_elevation",
-    "metadata": {}
+>>>markdown
+# Hack to Order a Pick.
+>>>malloy
+source: airports is table('duckdb:data/airports.parquet') + {
+  measure: 
+    airport_count is count()
+  
+  query: by_elevation is {
+    group_by: elevation is 
+      pick '1 Low' when elevation < 100
+      pick '2 Medium' when elevation < 1000
+      else '3 High'
+    aggregate: airport_count
   }
-]
+  -> {
+    project:
+      e is substr(elevation, 2)
+      airport_count
+      order is substr(elevation,1,1)  // should be able to order by this...
+    order_by: order
+  }
+  -> {project: e, airport_count}
+}
+>>>malloy
+# bar_chart
+run: airports -> by_elevation

@@ -1,26 +1,20 @@
-[
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "# Query from an API Endpoint (json)\nMalloy, using DuckDB, can query an API endpoint and transform it.  The example below reads exchange rate data from the US Treasury and shows the data by currency over time.\n\n## The Semantic Data Model",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "source: exchange_rates is table('duckdb:https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange?fields=country_currency_desc,exchange_rate,record_date&page[size]=10000&filter=country_currency_desc.json')",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## Query by Country\nBuild a line chart showing values by date.  The rate comes back as a string and we convert it into a number.",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "query: exchange_rates -> {\n  group_by: data.country_currency_desc\n  # line_chart\n  nest: by_date is {\n    group_by: \n      data.record_date\n      rate is data.exchange_rate::number\n  }\n}",
-    "metadata": {}
+>>>markdown
+# Query from an API Endpoint (json)
+Malloy, using DuckDB, can query an API endpoint and transform it.  The example below reads exchange rate data from the US Treasury and shows the data by currency over time.
+
+## The Semantic Data Model
+>>>malloy
+source: exchange_rates is table('duckdb:https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange?fields=country_currency_desc,exchange_rate,record_date&page[size]=10000&filter=country_currency_desc.json')
+>>>markdown
+## Query by Country
+Build a line chart showing values by date.  The rate comes back as a string and we convert it into a number.
+>>>malloy
+query: exchange_rates -> {
+  group_by: data.country_currency_desc
+  # line_chart
+  nest: by_date is {
+    group_by: 
+      data.record_date
+      rate is data.exchange_rate::number
   }
-]
+}

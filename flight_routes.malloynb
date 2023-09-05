@@ -1,38 +1,86 @@
-[
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "# Flight Routes Analysis\nBelow is the semantic model for the queries used in this notebook.  The 'flights' source joins in an airports table (twice, once as orign and once as destination) and a carriers table. ",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "source: flights is table('duckdb:data/flights.parquet') {\n  measure: \n    flight_count is count()\n    # percent\n    percent_of_flights is flight_count/all(flight_count)\n\n  join_one: orig is table('duckdb:data/airports.parquet') on origin=orig.code\n  join_one: dest is table('duckdb:data/airports.parquet') on destination=dest.code\n  join_one: carriers is table('duckdb:data/carriers.parquet') on carrier=carriers.code\n\n  query: routes is {\n    group_by:\n      orig.latitude\n      orig.longitude\n      latitude2 is dest.latitude\n      longitude2 is dest.longitude\n  }\n}",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## Flight Routes By Carrier\nLook at the top 10 destinations.  Show which carriers fly there and where the flights oroginate from.  ",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "# dashboard\nrun: flights -> {\n  top: 10\n  group_by: dest.code, dest.full_name\n  aggregate: flight_count\n  # bar_chart\n  nest: by_carrier is {\n    group_by: carriers.nickname\n    aggregate: flight_count\n  }\n  # line_chart\n  nest: by_carrier_by_month is {\n    group_by: flight_month is dep_time.month\n    aggregate: flight_count\n    group_by: carriers.nickname\n  }\n  nest: by_carrier_origin is {\n    group_by: carriers.nickname\n    aggregate: \n      flight_count\n      percent_of_flights\n      avg_distance is distance.avg()\n    # segment_map\n    nest: routes\n    # list_detail\n    nest: origin_percentage is {\n      group_by: orig.city\n      aggregate: percent_of_flights\n    }\n  }\n}",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "# Plane Tracker\n\nStarting from a basic flight log and a list of airports, produce a table that show flights log of individual planes.\n\nWe'll look at the first 5 days of flights in the year 2002 for all the airplanes flown by Southwest.\n\nSee each plane (by tail_num) and the days in sequence.",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "run: flights -> {\n  where: carriers.nickname = 'Southwest' and dep_time ? @2002-01 for 5 days\n  group_by: tail_num\n  nest: by_date is {\n    group_by: flight_date is dep_time.day\n    aggregate: flight_count\n    # segment_map\n    nest: routes\n    nest: flights is {\n      calculate: flight is row_number()\n      group_by: \n        dep_time\n        origin\n        destination\n      order_by: dep_time\n    }\n    order_by: flight_date\n  }\n  limit: 5\n}",
-    "metadata": {}
+>>>markdown
+# Flight Routes Analysis
+Below is the semantic model for the queries used in this notebook.  The 'flights' source joins in an airports table (twice, once as orign and once as destination) and a carriers table. 
+>>>malloy
+source: flights is table('duckdb:data/flights.parquet') {
+  measure: 
+    flight_count is count()
+    # percent
+    percent_of_flights is flight_count/all(flight_count)
+
+  join_one: orig is table('duckdb:data/airports.parquet') on origin=orig.code
+  join_one: dest is table('duckdb:data/airports.parquet') on destination=dest.code
+  join_one: carriers is table('duckdb:data/carriers.parquet') on carrier=carriers.code
+
+  query: routes is {
+    group_by:
+      orig.latitude
+      orig.longitude
+      latitude2 is dest.latitude
+      longitude2 is dest.longitude
   }
-]
+}
+>>>markdown
+## Flight Routes By Carrier
+Look at the top 10 destinations.  Show which carriers fly there and where the flights oroginate from.  
+>>>malloy
+# dashboard
+run: flights -> {
+  top: 10
+  group_by: dest.code, dest.full_name
+  aggregate: flight_count
+  # bar_chart
+  nest: by_carrier is {
+    group_by: carriers.nickname
+    aggregate: flight_count
+  }
+  # line_chart
+  nest: by_carrier_by_month is {
+    group_by: flight_month is dep_time.month
+    aggregate: flight_count
+    group_by: carriers.nickname
+  }
+  nest: by_carrier_origin is {
+    group_by: carriers.nickname
+    aggregate: 
+      flight_count
+      percent_of_flights
+      avg_distance is distance.avg()
+    # segment_map
+    nest: routes
+    # list_detail
+    nest: origin_percentage is {
+      group_by: orig.city
+      aggregate: percent_of_flights
+    }
+  }
+}
+>>>markdown
+# Plane Tracker
+
+Starting from a basic flight log and a list of airports, produce a table that show flights log of individual planes.
+
+We'll look at the first 5 days of flights in the year 2002 for all the airplanes flown by Southwest.
+
+See each plane (by tail_num) and the days in sequence.
+>>>malloy
+run: flights -> {
+  where: carriers.nickname = 'Southwest' and dep_time ? @2002-01 for 5 days
+  group_by: tail_num
+  nest: by_date is {
+    group_by: flight_date is dep_time.day
+    aggregate: flight_count
+    # segment_map
+    nest: routes
+    nest: flights is {
+      calculate: flight is row_number()
+      group_by: 
+        dep_time
+        origin
+        destination
+      order_by: dep_time
+    }
+    order_by: flight_date
+  }
+  limit: 5
+}

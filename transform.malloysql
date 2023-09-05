@@ -1,6 +1,8 @@
 >>>malloy
 source: airports is table('duckdb:data/airports.parquet')
->>>sql connection:duckdb
+>>>sql
+-- connection: duckdb
+
 
 COPY (
 %{

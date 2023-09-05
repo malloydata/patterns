@@ -1,38 +1,40 @@
-[
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## Producing a Chart or table with 'Other'\nOften you want to limit the number of results in a chart and bucket the everything else into an 'other' bucket.  \n\ntop_states by elevation calculates the top states and nests the data it is going to need to aggregate.  The seconds pipeline stage produces the actual aggregation.",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "source: airports is table('duckdb:data/airports.parquet') + {\n  measure: \n    airport_count is count()\n    avg_elevation is elevation.avg()\n\n  query: top_states_by_elevation is {\n    group_by: state\n    aggregate: avg_elevation\n    calculate: row_num is row_number()\n    nest: data is {  \n      group_by: code,elevation\n    }\n  }\n  -> {\n    group_by: state is \n      pick state when row_num < 5\n      else 'OTHER'\n    aggregate: avg_elevation is data.elevation.avg()\n  }\n}",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## Basic Query",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "run: airports -> top_states_by_elevation",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## As a nested query\n",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "run: airports -> {\n  group_by: `Facility Type` is fac_type\n  aggregate: \n    airport_count\n    avg_elevation\n  nest: top_states_by_elevation\n}",
-    "metadata": {}
+>>>markdown
+## Producing a Chart or table with 'Other'
+Often you want to limit the number of results in a chart and bucket the everything else into an 'other' bucket.  
+
+top_states by elevation calculates the top states and nests the data it is going to need to aggregate.  The seconds pipeline stage produces the actual aggregation.
+>>>malloy
+source: airports is table('duckdb:data/airports.parquet') + {
+  measure: 
+    airport_count is count()
+    avg_elevation is elevation.avg()
+
+  query: top_states_by_elevation is {
+    group_by: state
+    aggregate: avg_elevation
+    calculate: row_num is row_number()
+    nest: data is {  
+      group_by: code,elevation
+    }
   }
-]
+  -> {
+    group_by: state is 
+      pick state when row_num < 5
+      else 'OTHER'
+    aggregate: avg_elevation is data.elevation.avg()
+  }
+}
+>>>markdown
+## Basic Query
+>>>malloy
+run: airports -> top_states_by_elevation
+>>>markdown
+## As a nested query
+>>>malloy
+run: airports -> {
+  group_by: `Facility Type` is fac_type
+  aggregate: 
+    airport_count
+    avg_elevation
+  nest: top_states_by_elevation
+}

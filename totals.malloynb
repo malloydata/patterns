@@ -1,50 +1,47 @@
-[
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "# Totals\nWhen rendering you often want to get results data for a result row.",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "source: airports is table('duckdb:data/airports.parquet') + {\n  measure: \n    airport_count is count()\n    avg_elevation is elevation.avg()\n\n  query: measures is {\n    aggregate:\n      airport_count\n      avg_elevation\n  }\n}",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## Basic Table",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "run: airports -> {\n  aggregate: \n    airport_count \n    avg_elevation\n  nest: data_table is {\n    group_by: state\n    aggregate:\n      airport_count\n      avg_elevation\n    limit: 10\n  }\n}",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## Using Refinements",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "run: airports -> measures + {\n  group_by: state\n  limit: 10\n}",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## Table with Totals",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "malloy",
-    "value": "# totals\nrun: airports -> measures + {\n  nest: data_table is measures + {\n    group_by: state\n    limit: 10\n  }\n}",
-    "metadata": {}
+>>>markdown
+# Totals
+When rendering you often want to get results data for a result row.
+>>>malloy
+source: airports is table('duckdb:data/airports.parquet') + {
+  measure: 
+    airport_count is count()
+    avg_elevation is elevation.avg()
+
+  query: measures is {
+    aggregate:
+      airport_count
+      avg_elevation
   }
-]
+}
+>>>markdown
+## Basic Table
+>>>malloy
+run: airports -> {
+  aggregate: 
+    airport_count 
+    avg_elevation
+  nest: data_table is {
+    group_by: state
+    aggregate:
+      airport_count
+      avg_elevation
+    limit: 10
+  }
+}
+>>>markdown
+## Using Refinements
+>>>malloy
+run: airports -> measures + {
+  group_by: state
+  limit: 10
+}
+>>>markdown
+## Table with Totals
+>>>malloy
+# totals
+run: airports -> measures + {
+  nest: data_table is measures + {
+    group_by: state
+    limit: 10
+  }
+}
