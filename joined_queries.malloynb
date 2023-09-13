@@ -1,0 +1,61 @@
+>>>markdown
+# Query defined in a Joined source should be available.
+In the query below `by_state` is defined in airports.  The shape may be useful in sources that it is joined in, especially with refinements.
+>>>malloy
+source: airports is duckdb.table('data/airports.parquet') extend {
+  measure: 
+    airport_count is count()
+  query: by_state is {
+    group_by: state
+    aggregate: airport_count
+  }
+}
+
+flights is duckdb.table('data/flights.parquet') extend {
+  measure: flight_count is count()
+  join_one: orig is airports on origin=orig.code 
+}
+>>>markdown
+I would expect this query to work, but it doesn't compile.  
+>>>malloy
+// run: flights -> orig.state + {aggregate: flight_count}
+>>>markdown
+I would expect the results to look like this.
+>>>malloy
+run: flights -> {
+  group_by: orig.state
+  aggregate: orig.airport_count
+  aggregate: flight_count
+}
+>>>markdown
+**Side Note**: Chris, I would expect this to work.  We don't necessarily need a analytic function in a calculate block.  Just that everything is resolved in the output space.
+>>>malloy
+run: flights -> {
+  group_by: orig.state
+  aggregate: orig.airport_count
+  aggregate: flight_count
+  // calculate: flights_per_airport is flight_count/airport_count
+}
+>>>markdown
+**Sidenote 2:** This is kind of interesting and maybe we should do a pattern on it.
+>>>malloy
+run: flights -> {
+  group_by: orig.state
+  aggregate: orig.airport_count
+  aggregate: flight_count
+  nest: largest_airport is {
+    group_by: origin
+    aggregate: flight_count
+    limit: 1
+  }
+} 
+-> {
+  project:
+    state, airport_count, flight_count
+    top_airport is largest_airport.origin
+    top_airport_flights is largest_airport.flight_count
+    # percent
+    top_airport_percent_of_flights is 
+        largest_airport.flight_count/flight_count
+}
+>>>malloy
